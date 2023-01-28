@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Shooting : MonoBehaviour
+
+    //Space bar: shoot bullet
+    //Mouse: gun aim
+{
+
+    public GameObject BulletPrefab;
+
+    /// <summary>
+    /// How fast we should shoot our bullets
+    /// </summary>
+    public float BulletVelocity = 10;
+
+    //How long before a player can shoot again
+    public float fireRate = 0.5f;
+
+    //cooldown countdown
+    public float shootCoolDown = -1f;
+
+    // Update is called once per frame
+    void Update()
+    { 
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > shootCoolDown) {
+            shootCoolDown = Time.time + fireRate;
+            shootBullet();
+        }
+    }
+
+    void shootBullet() {
+        GameObject newBullet = Instantiate(BulletPrefab, transform.right * 2 + transform.localPosition, Quaternion.identity);
+        Rigidbody2D bulletRigidBody = newBullet.GetComponent<Rigidbody2D>();
+        bulletRigidBody.velocity = BulletVelocity * transform.right;
+    }
+}
