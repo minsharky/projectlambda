@@ -24,14 +24,14 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > shootCoolDown) {
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) && Time.time > shootCoolDown) {
             shootCoolDown = Time.time + fireRate;
             shootBullet();
         }
     }
 
     void shootBullet() {
-        GameObject newBullet = Instantiate(BulletPrefab, transform.right * 2 + transform.localPosition, Quaternion.identity);
+        GameObject newBullet = Instantiate(BulletPrefab, transform.right * 1.1f + transform.localPosition, Quaternion.identity);
         Rigidbody2D bulletRigidBody = newBullet.GetComponent<Rigidbody2D>();
         bulletRigidBody.velocity = BulletVelocity * transform.right;
     }
