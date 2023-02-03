@@ -11,6 +11,12 @@ public class Shooting : MonoBehaviour
     public GameObject BulletPrefab;
 
     /// <summary>
+    /// How powerful our bullets are
+    /// </summary>
+
+    public float BulletPower = 1;
+
+    /// <summary>
     /// How fast we should shoot our bullets
     /// </summary>
     public float BulletVelocity = 10;
