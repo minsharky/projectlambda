@@ -10,14 +10,26 @@ Mouse: Aim*/
 
 public class PlayerMovement : MonoBehaviour
 {
+    UpgradeTracker upgrades;
+
+
     // Move constant
-    float moveConstant = 0.025f;
+    float moveSpeed;
 
     public float RotateSpeed = 1f;
+
+    // Start
+    void Start()
+    {
+        upgrades = GetComponent<UpgradeTracker>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        // Update movement speed
+         moveSpeed = 0.02f * 0.5f*(upgrades.uPlayerSpeed + 1);
+
         // Left Arrow or "A"
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {

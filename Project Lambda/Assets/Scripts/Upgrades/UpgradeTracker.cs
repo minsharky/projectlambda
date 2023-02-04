@@ -44,6 +44,45 @@ public class UpgradeTracker : MonoBehaviour
     // TODO LATER: Display the upgrade values on screen, hopefully using something like a bar.
     void Update()
     {
-        
+        // Press p to increase player speed.
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            uPlayerSpeed++;
+            // If uPlayerSpeed == 3, reset to 0
+            if (uPlayerSpeed == 3)
+            {
+                uPlayerSpeed = 0;
+            }
+        }
+        // Press f to increase firing speed
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            uFiringSpeed++;
+            // If uFiringSpeed == 3, reset to 0
+            if (uFiringSpeed == 3)
+            {
+                uFiringSpeed = 0;
+            }
+        }
+        // Press b to increase bit power
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            uBitPower++;
+            // If uBitPower == 3, reset to 0
+            if (uBitPower == 3)
+            {
+                uBitPower = 0;
+            }
+        }
+        // Press h to increase health
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            uHealth++;
+            // If uHealth == 3, reset to 0
+            if (uHealth == 3)
+            {
+                uHealth = 0;
+            }
+        }
     }
 }
