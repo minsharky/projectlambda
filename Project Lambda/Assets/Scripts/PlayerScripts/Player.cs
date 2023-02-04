@@ -7,34 +7,35 @@ public class Player : MonoBehaviour
     public Rigidbody2D rigidBody;
     public float hitPoints;
 
+    // Player Damages from Boss
+    public float damageFromContact;
+    public float damageFromBullet;
+
     // Upgrades Component
     UpgradeTracker upgrades;
 
     // Start is called before the first frame update
     void Start()
     {
-        hitPoints = 100;
         rigidBody = GetComponent<Rigidbody2D>();
+        hitPoints = 100;
+
+        damageFromContact = 5f;
+        damageFromBullet = 2f;
 
         // Upgrades
         upgrades = GetComponent<UpgradeTracker>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            hitPoints -= 2;
+            hitPoints -= damageFromContact;
         }
         if (collision.gameObject.GetComponent<EnemyBullet>())
         {
-            hitPoints -= 2;
+            hitPoints -= damageFromBullet;
         }
     }
 

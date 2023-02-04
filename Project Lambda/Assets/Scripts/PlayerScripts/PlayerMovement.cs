@@ -7,11 +7,9 @@ Space Bar: Shoot bullet
 AWSD/UpDown : Move
 Mouse: Aim*/
 
-
 public class PlayerMovement : MonoBehaviour
 {
     UpgradeTracker upgrades;
-
 
     // Move constant
     float moveSpeed = 0.02f;
@@ -34,21 +32,21 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x - moveSpeed, transform.position.y);
         }
 
-        // Right Arrow
+        // Right Arrow or "D"
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             // Move the Player to the right
             transform.position = new Vector3(transform.position.x + moveSpeed, transform.position.y);
         }
 
-        // Up Arrow
+        // Up Arrow or "W"
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             // Move the Player to the up
             transform.position = new Vector3(transform.position.x, transform.position.y + moveSpeed);
         }
 
-        // Down Arrow
+        // Down Arrow or "S"
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             // Move the Player to the down

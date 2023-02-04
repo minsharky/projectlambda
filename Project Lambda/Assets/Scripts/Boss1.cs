@@ -6,9 +6,15 @@ public class Boss1 : MonoBehaviour
 {
     public Transform player;
     public Rigidbody2D rigidBody;
+    public GameObject BulletPrefab;
+
+    //Boss Attributes
     public float bossSpeed;
     public float hitPoints;
-    public GameObject BulletPrefab;
+    public float DamageFromBullet;
+    public float fireRate;
+    public float bossP2Speed;
+    
     public float timeBullet;
     public float constant;
 
@@ -17,8 +23,14 @@ public class Boss1 : MonoBehaviour
     {
         player = FindObjectOfType<Player>().transform;
         rigidBody = GetComponent<Rigidbody2D>();
-        bossSpeed = 1;
+
+        bossSpeed = 1.5f;
         hitPoints = 100;
+        DamageFromBullet = 2f;
+        fireRate = 2f;
+        bossP2Speed = 2.5f;
+
+        //Boss starts firing bullets after 3 seconds
         timeBullet = Time.time + 3f;
         constant = 1;
     }
@@ -28,37 +40,39 @@ public class Boss1 : MonoBehaviour
     {
         rigidBody.velocity = bossSpeed * (player.position - transform.position).normalized;
 
-        //Boss shoots bullets every 2 seconds
+        //Boss shoots every 2 seconds
         if (Time.time > timeBullet)
         {
-            shoot();
-            timeBullet += 2f;
-            if (hitPoints <= 90)
+            Shoot();
+            timeBullet += fireRate;
+
+            //Phase 2
+            //After Boss takes 50% damage, Boss now triple shoots and moves 2.5x
+            if (hitPoints <= 50)
             {
-                //Phase 2
-                //TODO: Make triple bullets actually come out in a triple shot
-                constant = -1.001f;
-                shoot();
-                constant = 1.001f;
-                shoot();
-                bossSpeed = 2.5f;
+                constant = 1.2f;
+                Shoot();
+                constant = 0.8f;
+                Shoot();
+                bossSpeed = bossP2Speed;
             }
         }
 
-        //When Boss's hp gets to zero, it dies
+        //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0) {
             Destroy(this.gameObject);
         }
     }
 
+    //When Boss is hit by the player's bullet, it takes 2 damage
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerBullet>()) {
-            hitPoints -= 2;
+            hitPoints -= DamageFromBullet;
         }
     }
 
-    //shoots as bullet in the direction of the player
-    void shoot()
+    //shoots a bullet in the direction of the player
+    void Shoot()
     {
         Vector3 newPos;
 
@@ -89,8 +103,8 @@ public class Boss1 : MonoBehaviour
             }
         }
 
-        GameObject newBullet = Instantiate(BulletPrefab, transform.localPosition + newPos * 2f * constant, Quaternion.identity);
+        GameObject newBullet = Instantiate(BulletPrefab, transform.localPosition + newPos * 2f, Quaternion.identity);
         Rigidbody2D bulletRigidBody = newBullet.GetComponent<Rigidbody2D>();
-        bulletRigidBody.velocity = 10f * (FindObjectOfType<Player>().transform.position - transform.position).normalized;
+        bulletRigidBody.velocity = 10f * (FindObjectOfType<Player>().transform.position * constant - transform.position).normalized;
     }
 }
