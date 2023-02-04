@@ -647,6 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 6022802799066404064, guid: 2df2de54b4353d041b1d073b827ecf1c, type: 3}
+  BulletPower: 1
   BulletVelocity: 10
   fireRate: 0.5
   shootCoolDown: -1
@@ -692,6 +693,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1516801318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516801303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6034f7104714ddc4b8dbffb2518361c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePoints: 0
+  uBitPower: 0
+  uFiringSpeed: 0
+  uHealth: 0
+  uArmor: 0
+  uRegenSpeed: 0
+  uPlayerSpeed: 0
 --- !u!1 &1718575254
 GameObject:
   m_ObjectHideFlags: 0

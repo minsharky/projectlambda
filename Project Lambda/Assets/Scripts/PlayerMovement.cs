@@ -10,20 +10,32 @@ Mouse: Aim*/
 
 public class PlayerMovement : MonoBehaviour
 {
+    UpgradeTracker upgrades;
+
+
     // Move constant
-    float moveConstant = 0.025f;
+    float moveSpeed;
 
     public float RotateSpeed = 1f;
+
+    // Start
+    void Start()
+    {
+        upgrades = GetComponent<UpgradeTracker>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        // Update movement speed
+         moveSpeed = 0.02f * 0.5f*(upgrades.uPlayerSpeed + 1);
+
         // Left Arrow or "A"
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             // Move the Player to the left
             //transform.Translate(Vector3.left * moveConstant);
-            transform.position = new Vector3(transform.position.x - moveConstant, transform.position.y);
+            transform.position = new Vector3(transform.position.x - moveSpeed, transform.position.y);
         }
 
         // Right Arrow
@@ -31,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Move the Player to the right
             //transform.Translate(Vector3.right * moveConstant);
-            transform.position = new Vector3(transform.position.x + moveConstant, transform.position.y);
+            transform.position = new Vector3(transform.position.x + moveSpeed, transform.position.y);
         }
 
         // Up Arrow
@@ -39,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Move the Player to the up
             //transform.Translate(Vector3.up * moveConstant);
-            transform.position = new Vector3(transform.position.x, transform.position.y + moveConstant);
+            transform.position = new Vector3(transform.position.x, transform.position.y + moveSpeed);
         }
 
         // Down Arrow
@@ -47,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Move the Player to the down
             //transform.Translate(Vector3.down * moveConstant);
-            transform.position = new Vector3(transform.position.x, transform.position.y - moveConstant);
+            transform.position = new Vector3(transform.position.x, transform.position.y - moveSpeed);
         }
 
         //aims player to mouse position
