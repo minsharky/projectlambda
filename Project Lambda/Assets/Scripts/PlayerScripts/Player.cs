@@ -26,5 +26,9 @@ public class Player : MonoBehaviour
         {
             hitPoints -= 2;
         }
+        if (collision.gameObject.GetComponent<EnemyBullet>())
+        {
+            hitPoints -= 2;
+        }
     }
 }

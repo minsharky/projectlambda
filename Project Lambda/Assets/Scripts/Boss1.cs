@@ -20,6 +20,7 @@ public class Boss1 : MonoBehaviour
         bossSpeed = 1;
         hitPoints = 100;
         timeBullet = Time.time + 3f;
+        constant = 1;
     }
 
     // Update is called once per frame
@@ -35,22 +36,23 @@ public class Boss1 : MonoBehaviour
             if (hitPoints <= 90)
             {
                 //Phase 2
-                constant = -1.1f;
+                //TODO: Make triple bullets actually come out in a triple shot
+                constant = -1.001f;
                 shoot();
-                constant = 1.1f;
+                constant = 1.001f;
                 shoot();
                 bossSpeed = 2.5f;
             }
         }
 
-        //When Boss hp gets to zero, it dies
+        //When Boss's hp gets to zero, it dies
         if (hitPoints <= 0) {
             Destroy(this.gameObject);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.GetComponent<Bullets>()) {
+        if (collision.gameObject.GetComponent<PlayerBullet>()) {
             hitPoints -= 2;
         }
     }
