@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Move constant
-    float moveSpeed;
+    float moveSpeed = 0.02f;
 
     public float RotateSpeed = 1f;
 
@@ -27,9 +27,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Update movement speed
-         moveSpeed = 0.02f * 0.5f*(upgrades.uPlayerSpeed + 1);
-
         // Left Arrow or "A"
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
@@ -62,5 +59,10 @@ public class PlayerMovement : MonoBehaviour
         var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
+    public void UpdateMoveSpeed()
+    {
+        moveSpeed = 0.02f * 0.5f * (upgrades.uPlayerSpeed + 1);
     }
 }

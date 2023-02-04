@@ -25,6 +25,10 @@ public class UpgradeTracker : MonoBehaviour
     public int uArmor;
     public int uRegenSpeed;
     public int uPlayerSpeed;
+
+    // Player Movement Component
+    PlayerMovement playerMovement;
+
     
     // Start is called before the first frame update
     void Start()
@@ -36,6 +40,8 @@ public class UpgradeTracker : MonoBehaviour
         uArmor = 0;
         uRegenSpeed = 0;
         uPlayerSpeed = 0;
+
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     // TODO: Check if the player can upgrade every frame (how many upgrade points).
@@ -53,6 +59,7 @@ public class UpgradeTracker : MonoBehaviour
             {
                 uPlayerSpeed = 0;
             }
+            playerMovement.UpdateMoveSpeed();
         }
         // Press f to increase firing speed
         if (Input.GetKeyDown(KeyCode.F))
@@ -63,6 +70,7 @@ public class UpgradeTracker : MonoBehaviour
             {
                 uFiringSpeed = 0;
             }
+
         }
         // Press b to increase bit power
         if (Input.GetKeyDown(KeyCode.B))
