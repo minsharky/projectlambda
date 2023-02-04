@@ -50,7 +50,7 @@ public class UpgradeTracker : MonoBehaviour
         // Components
         playerMovement = GetComponent<PlayerMovement>();
         shooting = GetComponent<Shooting>();
-        player = GetComponent<player>();
+        player = GetComponent<Player>();
 
     }
 
@@ -103,6 +103,7 @@ public class UpgradeTracker : MonoBehaviour
             {
                 uHealth = 0;
             }
+            player.UpdateHealth();
         }
     }
 }
