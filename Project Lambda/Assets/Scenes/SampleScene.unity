@@ -467,6 +467,10 @@ PrefabInstance:
       propertyPath: rigidBody
       value: 
       objectReference: {fileID: 1611991408}
+    - target: {fileID: 1245150985970981879, guid: 824b75d7e62c1df4e9a44a689068f6ae, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 6022802799066404064, guid: a4e4f3747c9450f4c8c6263db3a4e2a4, type: 3}
     - target: {fileID: 2789563134937462232, guid: 824b75d7e62c1df4e9a44a689068f6ae, type: 3}
       propertyPath: m_AngularDrag
       value: 0
