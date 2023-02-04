@@ -29,6 +29,9 @@ public class UpgradeTracker : MonoBehaviour
     // Player Movement Component
     PlayerMovement playerMovement;
 
+    // Shooting Component
+    Shooting shooting;
+
     
     // Start is called before the first frame update
     void Start()
@@ -41,7 +44,10 @@ public class UpgradeTracker : MonoBehaviour
         uRegenSpeed = 0;
         uPlayerSpeed = 0;
 
+        // Components
         playerMovement = GetComponent<PlayerMovement>();
+        shooting = GetComponent<Shooting>();
+
     }
 
     // TODO: Check if the player can upgrade every frame (how many upgrade points).
@@ -81,6 +87,7 @@ public class UpgradeTracker : MonoBehaviour
             {
                 uBitPower = 0;
             }
+            shooting.UpdateBitPower();
         }
         // Press h to increase health
         if (Input.GetKeyDown(KeyCode.H))

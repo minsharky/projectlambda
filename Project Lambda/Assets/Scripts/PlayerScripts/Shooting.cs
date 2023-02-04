@@ -27,6 +27,16 @@ public class Shooting : MonoBehaviour
     //cooldown countdown
     public float shootCoolDown = -1f;
 
+    // UpgradeTracker
+    UpgradeTracker upgrades;
+
+    // Start
+    void Start()
+    {
+        upgrades = GetComponent<UpgradeTracker>();
+    }
+
+
     // Update is called once per frame
     void Update()
     { 
@@ -40,5 +50,10 @@ public class Shooting : MonoBehaviour
         GameObject newBullet = Instantiate(BulletPrefab, transform.right * 1.1f + transform.localPosition, Quaternion.identity);
         Rigidbody2D bulletRigidBody = newBullet.GetComponent<Rigidbody2D>();
         bulletRigidBody.velocity = BulletVelocity * transform.right;
+    }
+
+    public void UpdateBitPower()
+    {
+        BulletPower = 1 + 0.25f * (upgrades.uBitPower);
     }
 }
