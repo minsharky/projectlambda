@@ -32,6 +32,9 @@ public class UpgradeTracker : MonoBehaviour
     // Shooting Component
     Shooting shooting;
 
+    // Player Component
+    Player player;
+
     
     // Start is called before the first frame update
     void Start()
@@ -47,6 +50,7 @@ public class UpgradeTracker : MonoBehaviour
         // Components
         playerMovement = GetComponent<PlayerMovement>();
         shooting = GetComponent<Shooting>();
+        player = GetComponent<player>();
 
     }
 
@@ -76,6 +80,7 @@ public class UpgradeTracker : MonoBehaviour
             {
                 uFiringSpeed = 0;
             }
+            shooting.UpdateFiringSpeed();
 
         }
         // Press b to increase bit power

@@ -56,4 +56,9 @@ public class Shooting : MonoBehaviour
     {
         BulletPower = 1 + 0.25f * (upgrades.uBitPower);
     }
+
+    public void UpdateFiringSpeed()
+    {
+        fireRate = 0.5f * (1 / (1 + 0.5f*upgrades.uFiringSpeed));
+    }
 }
