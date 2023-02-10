@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static System.Math;
 
 /*Player movement
 Space Bar: Shoot bullet
@@ -27,6 +28,30 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Left Arrow or "A"
+        bool leftArrow = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
+        // Right Arrow or "D"
+        bool rightArrow = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
+        // Up Arrow or "W"
+        bool upArrow = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
+        // Down Arrow or "S"
+        bool downArrow = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
+
+        // Moving Vertically?
+        bool movingVertically = upArrow ^ downArrow;
+
+        // Moving Horizontally?
+        bool movingHorizontally = leftArrow ^ rightArrow;
+
+        // Divide by Square Root 2?
+        float factor = 1;
+        if (movingVertically & movingHorizontally)
+        {
+            factor = (float) Sqrt(2);
+        }
+
+
+
+        // If Left Arrow
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             // Move the Player to the left
