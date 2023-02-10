@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
-    public float hitPoints;
+    private float hitPoints = 100f;
+    private float maxHitPoints = 100f;
+    private float baseHitPoints = 100f;
 
     // Player Damages from Boss
     public float damageFromContact;
@@ -14,17 +16,20 @@ public class Player : MonoBehaviour
     // Upgrades Component
     UpgradeTracker upgrades;
 
+    // HealthBar
+    HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        hitPoints = 100;
 
         damageFromContact = 5f;
         damageFromBullet = 2f;
 
-        // Upgrades
+        // Components
         upgrades = GetComponent<UpgradeTracker>();
+        healthBar = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<HealthBar>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,15 +37,27 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             hitPoints -= damageFromContact;
+            healthBar.UpdatePlayerHealth();
         }
         if (collision.gameObject.GetComponent<EnemyBullet>())
         {
             hitPoints -= damageFromBullet;
+            healthBar.UpdatePlayerHealth();
         }
     }
 
     public void UpdateHealth()
     {
-        hitPoints = 100 + 50 * upgrades.uHealth;
+        maxHitPoints = baseHitPoints + (50 * upgrades.uHealth);
+    }
+
+    public float getHitPoints()
+    {
+        return hitPoints;
+    }
+
+    public float getMaxHitPoints()
+    {
+        return maxHitPoints;
     }
 }
