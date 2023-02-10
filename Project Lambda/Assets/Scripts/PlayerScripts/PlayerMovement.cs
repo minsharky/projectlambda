@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     UpgradeTracker upgrades;
 
     // Move constant
-    float moveSpeed = 0.02f;
+    float moveSpeed = 0.01f;
+    float baseVal = 0.01f;
 
     public float RotateSpeed = 1f;
 
@@ -61,6 +62,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateMoveSpeed()
     {
-        moveSpeed = 0.02f * 0.5f * (upgrades.uPlayerSpeed + 1);
+        moveSpeed = baseVal * (upgrades.uPlayerSpeed + 1);
     }
 }
