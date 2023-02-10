@@ -37,13 +37,13 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             hitPoints -= damageFromContact;
-            healthBar.UpdatePlayerHealth();
         }
         if (collision.gameObject.GetComponent<EnemyBullet>())
         {
             hitPoints -= damageFromBullet;
-            healthBar.UpdatePlayerHealth();
         }
+        healthBar.UpdatePlayerHealth();
+        checkGameOver();
     }
 
     public void UpdateHealth()
@@ -59,5 +59,13 @@ public class Player : MonoBehaviour
     public float getMaxHitPoints()
     {
         return maxHitPoints;
+    }
+    private void checkGameOver()
+    {
+        if (hitPoints <= 0)
+        {
+
+            Time.timeScale = 0;
+        }
     }
 }
