@@ -11,10 +11,11 @@ Mouse: Aim*/
 public class PlayerMovement : MonoBehaviour
 {
     UpgradeTracker upgrades;
+    Rigidbody2D rb;
 
     // Move constant
-    float moveSpeed = 0.025f;
-    float baseVal = 0.025f;
+    float moveSpeed = 10f;
+    float baseVal = 10f;
 
     public float RotateSpeed = 1f;
 
@@ -22,62 +23,20 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         upgrades = GetComponent<UpgradeTracker>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Left Arrow or "A"
-        bool leftArrow = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
-        // Right Arrow or "D"
-        bool rightArrow = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
-        // Up Arrow or "W"
-        bool upArrow = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
-        // Down Arrow or "S"
-        bool downArrow = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
-
-        // Moving Vertically?
-        bool movingVertically = upArrow ^ downArrow;
-
-        // Moving Horizontally?
-        bool movingHorizontally = leftArrow ^ rightArrow;
-
-        // Divide by Square Root 2?
-        float factor = 1;
-        if (movingVertically & movingHorizontally)
+        float xMove = Input.GetAxisRaw("Horizontal");
+        float yMove = Input.GetAxisRaw("Vertical");
+        float divisor = 1;
+        if (xMove != 0 && yMove != 0)
         {
-            factor = (float) Sqrt(2);
+            divisor = (float) Sqrt(2);
         }
-
-
-
-        // If Left Arrow
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            // Move the Player to the left
-            transform.position = new Vector3(transform.position.x - moveSpeed, transform.position.y);
-        }
-
-        // Right Arrow or "D"
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            // Move the Player to the right
-            transform.position = new Vector3(transform.position.x + moveSpeed, transform.position.y);
-        }
-
-        // Up Arrow or "W"
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            // Move the Player to the up
-            transform.position = new Vector3(transform.position.x, transform.position.y + moveSpeed);
-        }
-
-        // Down Arrow or "S"
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            // Move the Player to the down
-            transform.position = new Vector3(transform.position.x, transform.position.y - moveSpeed);
-        }
+        rb.velocity = new Vector3(xMove, yMove) * moveSpeed / divisor;
 
         //aims player to mouse position
         var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
