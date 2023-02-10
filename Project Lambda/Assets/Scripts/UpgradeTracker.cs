@@ -35,6 +35,9 @@ public class UpgradeTracker : MonoBehaviour
     // Player Component
     Player player;
 
+    // Health Bar Component
+    // HealthBar hb;
+
     
     // Start is called before the first frame update
     void Start()
@@ -51,6 +54,7 @@ public class UpgradeTracker : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         shooting = GetComponent<Shooting>();
         player = GetComponent<Player>();
+        // hb = GetComponent<HealthBar>();
 
     }
 
@@ -81,7 +85,6 @@ public class UpgradeTracker : MonoBehaviour
                 uFiringSpeed = 0;
             }
             shooting.UpdateFiringSpeed();
-
         }
         // Press b to increase bit power
         if (Input.GetKeyDown(KeyCode.B))

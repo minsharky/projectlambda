@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     public void UpdateHealth()
     {
         maxHitPoints = baseHitPoints + (50 * upgrades.uHealth);
+        healthBar.UpdatePlayerHealth();
     }
 
     public float getHitPoints()
