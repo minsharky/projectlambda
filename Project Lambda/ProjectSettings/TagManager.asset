@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Enemy
   - Health Bar
+  - Tunnel
   layers:
   - Default
   - TransparentFX

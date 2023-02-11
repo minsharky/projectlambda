@@ -49,3 +49,6 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = baseVal * (upgrades.uPlayerSpeed + 1);
     }
 }
+
+
+
