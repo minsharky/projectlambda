@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
     /// <summary>
     /// How fast we should shoot our bullets
     /// </summary>
-    public float BulletVelocity = 10;
+    public float BulletVelocity = 30;
 
     //How long before a player can shoot again
     public float fireRate = 0.5f;

@@ -151,6 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366db121b16a7dc45b88bcf249b741b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 0}
+  damageFromContact: 0
+  damageFromBullet: 0
 --- !u!114 &-3653355303020897783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 0}
   BulletPower: 1
-  BulletVelocity: 10
+  BulletVelocity: 30
   fireRate: 0.5
   shootCoolDown: -1

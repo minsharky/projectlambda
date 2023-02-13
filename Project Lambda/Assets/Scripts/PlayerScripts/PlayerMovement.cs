@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
 
     // Move constant
-    float moveSpeed = 10f;
-    float baseVal = 10f;
+    float moveSpeed = 8f;
+    float baseVal = 8f;
 
     public float RotateSpeed = 1f;
 
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateMoveSpeed()
     {
-        moveSpeed = baseVal * (upgrades.uPlayerSpeed + 1);
+        moveSpeed = baseVal + (4 * upgrades.uPlayerSpeed);
     }
 }
 
