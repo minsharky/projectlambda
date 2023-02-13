@@ -35,6 +35,19 @@ public class UpgradeTracker : MonoBehaviour
     // Player Component
     Player player;
 
+    // Speed Bar Component
+    SpeedUpgradeBar speedBar;
+
+    // Health Upgrade Bar Component
+    HealthUpgradeBar healthUpgradeBar;
+
+    // Cooldown Upgrade Bar Component
+    CooldownUpgradeBar cooldownUpgradeBar;
+
+    // Power Upgrade Bar
+    PowerUpgradeBar powerUpgradeBar;
+
+
     // Health Bar Component
     // HealthBar hb;
 
@@ -55,6 +68,10 @@ public class UpgradeTracker : MonoBehaviour
         shooting = GetComponent<Shooting>();
         player = GetComponent<Player>();
         // hb = GetComponent<HealthBar>();
+        speedBar = GameObject.FindGameObjectWithTag("Speed Bar").GetComponent<SpeedUpgradeBar>();
+        healthUpgradeBar = GameObject.FindGameObjectWithTag("Health Upgrade Bar").GetComponent<HealthUpgradeBar>();
+        cooldownUpgradeBar = GameObject.FindGameObjectWithTag("Cooldown Bar").GetComponent<CooldownUpgradeBar>();
+        powerUpgradeBar = GameObject.FindGameObjectWithTag("Power Bar").GetComponent<PowerUpgradeBar>();
 
     }
 
@@ -74,6 +91,7 @@ public class UpgradeTracker : MonoBehaviour
                 uPlayerSpeed = 0;
             }
             playerMovement.UpdateMoveSpeed();
+            speedBar.SpeedBarUpdate();
         }
         // Press f to increase firing speed
         if (Input.GetKeyDown(KeyCode.F))
@@ -85,6 +103,7 @@ public class UpgradeTracker : MonoBehaviour
                 uFiringSpeed = 0;
             }
             shooting.UpdateFiringSpeed();
+            cooldownUpgradeBar.CooldownUpgradeBarUpdate();
         }
         // Press b to increase bit power
         if (Input.GetKeyDown(KeyCode.B))
@@ -96,6 +115,7 @@ public class UpgradeTracker : MonoBehaviour
                 uBitPower = 0;
             }
             shooting.UpdateBitPower();
+            powerUpgradeBar.PowerUpgradeBarUpdate();
         }
         // Press h to increase health
         if (Input.GetKeyDown(KeyCode.H))
@@ -107,6 +127,7 @@ public class UpgradeTracker : MonoBehaviour
                 uHealth = 0;
             }
             player.UpdateHealth();
+            healthUpgradeBar.HealthUpgradeBarUpdate();
         }
     }
 }

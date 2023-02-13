@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - Health Bar
   - Tunnel
+  - Speed Bar
+  - Health Upgrade Bar
+  - Cooldown Bar
+  - Power Bar
   layers:
   - Default
   - TransparentFX
