@@ -40,22 +40,20 @@ public class Boss2 : MonoBehaviour
     {
         rigidBody.velocity = bossSpeed * (player.position - transform.position).normalized;
 
-        //Boss shoots every 2 seconds
+        //Boss shoots 5 bullet spray every 2 seconds
         if (Time.time > timeBullet)
         {
             Shoot();
+            constant = 1.2f;
+            Shoot();
+            constant = 1.1f;
+            Shoot();
+            constant = 0.9f;
+            Shoot();
+            constant = 0.8f;
+            Shoot();
+            bossSpeed = bossP2Speed;
             timeBullet += fireRate;
-
-            //Phase 2
-            //After Boss takes 50% damage, Boss now triple shoots and moves 2.5x
-            if (hitPoints <= 50)
-            {
-                constant = 1.2f;
-                Shoot();
-                constant = 0.8f;
-                Shoot();
-                bossSpeed = bossP2Speed;
-            }
         }
 
         //When Boss's HP gets to zero, it dies
@@ -68,6 +66,20 @@ public class Boss2 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerBullet>()) {
             hitPoints -= DamageFromBullet;
+            if (hitPoints <= 50)
+            {
+                bossSpeed = 5.0f;
+                constant = 1.2f;
+                Shoot();
+                constant = 1.1f;
+                Shoot();
+                constant = 1.0f;
+                Shoot();
+                constant = 0.9f;
+                Shoot();
+                constant = 0.8f;
+                Shoot();
+            }
         }
     }
 
