@@ -6,19 +6,23 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyHealthBar : MonoBehaviour
 {
-    public Transform enemy;
-    public Image background;
-    public Image bar;
+    Slider healthBar;
+    
+    private void Start()
+    {
+        //healthBar = GetComponent<Slider>();
+        //healthBar.value = 0;
+    }
     void Update()
     {
-        transform.position = enemy.position;
+        //transform.position = enemy.position;
         
         // Puts bar below enemy
         transform.SetAsLastSibling();
     }
-    public void UpdatePlayerHealth(float healthPercent)
+    public void UpdateEnemyHealth()
     {
-        // Fills bar
-        bar.fillAmount = healthPercent;
+        //healthBar.maxValue = enemy.getMaxHitPoints();
+        //healthBar.value = enemy.getHitPoints();
     }
 }
