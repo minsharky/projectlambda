@@ -25,4 +25,9 @@ public class PlayerHealthBar : MonoBehaviour
         healthBar.maxValue = player.getMaxHitPoints();
         healthBar.value = player.getHitPoints();
     }
+
+    private void Update()
+    {
+        UpdatePlayerHealth();
+    }
 }

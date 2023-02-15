@@ -17,10 +17,14 @@ public class CooldownUpgradeBar : MonoBehaviour
         upgradeTracker = GameObject.FindGameObjectWithTag("Player").GetComponent<UpgradeTracker>();
     }
 
-    // Update is called once per frame
     public void CooldownUpgradeBarUpdate()
     {
         level = upgradeTracker.uFiringSpeed + 1;
         cooldownUpgradeBar.value = level / 3;
+    }
+
+    private void Update()
+    {
+        CooldownUpgradeBarUpdate();
     }
 }

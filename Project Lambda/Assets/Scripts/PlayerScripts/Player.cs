@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
-    private float hitPoints = 100f;
+    public float hitPoints = 100f;
     private float maxHitPoints = 100f;
     private float baseHitPoints = 100f;
 

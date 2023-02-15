@@ -23,4 +23,9 @@ public class PowerUpgradeBar : MonoBehaviour
         level = upgradeTracker.uBitPower + 1;
         powerBar.value = level / 3;
     }
+
+    private void Update()
+    {
+        PowerUpgradeBarUpdate();
+    }
 }

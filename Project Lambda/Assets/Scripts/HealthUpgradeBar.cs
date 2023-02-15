@@ -24,4 +24,9 @@ public class HealthUpgradeBar : MonoBehaviour
         level = upgradeTracker.uHealth + 1;
         healthUpgradeBar.value = (float)level / 3;
     }
+
+    private void Update()
+    {
+        HealthUpgradeBarUpdate();
+    }
 }

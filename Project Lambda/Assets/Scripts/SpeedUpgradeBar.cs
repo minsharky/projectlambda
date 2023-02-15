@@ -25,4 +25,9 @@ public class SpeedUpgradeBar : MonoBehaviour
         level = upgradeTracker.uPlayerSpeed+1;
         speedBar.value = (float) level / 3;
     }
+
+    private void Update()
+    {
+        SpeedBarUpdate();
+    }
 }
