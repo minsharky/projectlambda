@@ -67,7 +67,7 @@ public class Boss2 : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        healthBar.UpdatePlayerHealth(hitPoints / maxHitPoints);
+        //healthBar.UpdateEnemyHealth(hitPoints / maxHitPoints);
     }
 
     //When Boss is hit by the player's bullet, it takes 2 damage
