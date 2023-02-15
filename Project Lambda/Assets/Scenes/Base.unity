@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 117082217}
   m_Layer: 5
   m_Name: Health Bar
-  m_TagString: Health Bar
+  m_TagString: Player Health Bar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,6 +811,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3532920593200167670, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532920593200167670, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -818,7 +822,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3926374531062871287, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
 --- !u!1 &435734861 stripped
 GameObject:
@@ -1497,10 +1502,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 828708385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41126e5ef700f3e4ca8c52133c02e386, type: 3}
+  m_Script: {fileID: 11500000, guid: f3ae9e22540361f4587b06efa4cb5b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: Boss1Route
+  new_pos: {x: -34.3, y: -42.5, z: 0}
 --- !u!1 &858056951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,10 +2976,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986475468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41126e5ef700f3e4ca8c52133c02e386, type: 3}
+  m_Script: {fileID: 11500000, guid: f3ae9e22540361f4587b06efa4cb5b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: Boss2Route
+  new_pos: {x: -1.29, y: 14, z: 0}
 --- !u!1 &2055000514
 GameObject:
   m_ObjectHideFlags: 0

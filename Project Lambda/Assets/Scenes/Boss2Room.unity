@@ -818,6 +818,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3532920593200167670, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532920593200167670, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -901,10 +905,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 278302149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41126e5ef700f3e4ca8c52133c02e386, type: 3}
+  m_Script: {fileID: 11500000, guid: f3ae9e22540361f4587b06efa4cb5b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: Boss2Route
+  new_pos: {x: -10.96, y: -32.88, z: 0}
 --- !u!61 &278302151
 BoxCollider2D:
   m_ObjectHideFlags: 0

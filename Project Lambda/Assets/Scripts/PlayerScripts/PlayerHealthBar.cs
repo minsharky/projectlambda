@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealthBar : MonoBehaviour
 {
     // Get the HealthBar Slider component
-    Slider healthBar; 
+    Slider healthBar;
     Player player;
 
     // Start is called before the first frame update
