@@ -1691,7 +1691,7 @@ Transform:
   m_Father: {fileID: 592520073}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &457511023
+--- !u!1001 &445549574
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1708,19 +1708,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7287398971371417382, guid: 561e1313bf78cee40b58d720cbf72562, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.4618337
+      value: 2.8287673
       objectReference: {fileID: 0}
     - target: {fileID: 7287398971371417382, guid: 561e1313bf78cee40b58d720cbf72562, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.7814658
+      value: 3.1845324
       objectReference: {fileID: 0}
     - target: {fileID: 7287398971371417382, guid: 561e1313bf78cee40b58d720cbf72562, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.51
+      value: -36.1406
       objectReference: {fileID: 0}
     - target: {fileID: 7287398971371417382, guid: 561e1313bf78cee40b58d720cbf72562, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.38
+      value: 15.0118
       objectReference: {fileID: 0}
     - target: {fileID: 7287398971371417382, guid: 561e1313bf78cee40b58d720cbf72562, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2386,7 +2386,7 @@ GameObject:
   - component: {fileID: 646899796}
   m_Layer: 5
   m_Name: Health Bar
-  m_TagString: Health Bar
+  m_TagString: Player Health Bar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5793,7 +5793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848442839}
   m_LocalRotation: {x: -0, y: -0, z: -0.7049689, w: 0.7092382}
-  m_LocalPosition: {x: 22.3, y: 8.5, z: 0.22576252}
+  m_LocalPosition: {x: 22.69, y: 8.622, z: 0.22576252}
   m_LocalScale: {x: 2.066907, y: 2.0071733, z: 2.066907}
   m_ConstrainProportionsScale: 0
   m_Children: []

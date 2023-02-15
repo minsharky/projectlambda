@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     UpgradeTracker upgrades;
 
     // HealthBar
-    HealthBar healthBar;
+    PlayerHealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
         // Components
         upgrades = GetComponent<UpgradeTracker>();
-        healthBar = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<HealthBar>();
+        healthBar = GameObject.FindGameObjectWithTag("Player Health Bar").GetComponent<PlayerHealthBar>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

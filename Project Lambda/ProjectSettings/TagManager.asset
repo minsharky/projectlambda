@@ -12,6 +12,7 @@ TagManager:
   - Health Upgrade Bar
   - Cooldown Bar
   - Power Bar
+  - Player Health Bar
   layers:
   - Default
   - TransparentFX

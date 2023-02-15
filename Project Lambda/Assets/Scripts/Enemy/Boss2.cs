@@ -10,6 +10,7 @@ public class Boss2 : MonoBehaviour
 
     //Boss Attributes
     public float bossSpeed;
+    public float maxHitPoints;
     public float hitPoints;
     public float DamageFromBullet;
     public float fireRate;
@@ -18,6 +19,7 @@ public class Boss2 : MonoBehaviour
     public float timeBullet;
     public float constant;
 
+    EnemyHealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +27,18 @@ public class Boss2 : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
 
         bossSpeed = 1.5f;
+        maxHitPoints = 100;
         hitPoints = 100;
         DamageFromBullet = 2f;
         fireRate = 2f;
         bossP2Speed = 2.5f;
 
-        //Boss starts firing bullets after 3 seconds
+        // Boss starts firing bullets after 3 seconds
         timeBullet = Time.time + 3f;
         constant = 1;
+
+        // Health Bar
+        healthBar = GetComponent<EnemyHealthBar>();
     }
 
     // Update is called once per frame
@@ -60,6 +66,8 @@ public class Boss2 : MonoBehaviour
         if (hitPoints <= 0) {
             Destroy(this.gameObject);
         }
+
+        healthBar.UpdatePlayerHealth(hitPoints / maxHitPoints);
     }
 
     //When Boss is hit by the player's bullet, it takes 2 damage
@@ -118,5 +126,14 @@ public class Boss2 : MonoBehaviour
         GameObject newBullet = Instantiate(BulletPrefab, transform.localPosition + newPos * 2f, Quaternion.identity);
         Rigidbody2D bulletRigidBody = newBullet.GetComponent<Rigidbody2D>();
         bulletRigidBody.velocity = 10f * (FindObjectOfType<Player>().transform.position * constant - transform.position).normalized;
+    }
+    public float getHitPoints()
+    {
+        return hitPoints;
+    }
+
+    public float getMaxHitPoints()
+    {
+        return maxHitPoints;
     }
 }

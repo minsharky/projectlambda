@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8604538236196908986}
   - component: {fileID: 4248778423824652155}
   - component: {fileID: 4747308648907246916}
+  - component: {fileID: 6651987136690393379}
   m_Layer: 0
   m_Name: Boss_2
   m_TagString: Untagged
@@ -156,3 +157,18 @@ MonoBehaviour:
   bossP2Speed: 0
   timeBullet: 0
   constant: 0
+--- !u!114 &6651987136690393379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138301151897419274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8b91f35f98baa4c8dd3fd206f91059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 7287398971371417382}
+  background: {fileID: 5697341684969760512, guid: e60cd406f29fe5c499898002e73726ae, type: 3}
+  bar: {fileID: 5642270305573272583, guid: 564a5f641d949b24eab02d2a9698d9e5, type: 3}
