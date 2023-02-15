@@ -7,7 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyHealthBar : MonoBehaviour
 {
     Slider healthBar;
-    
+    GameObject enemy;
     private void Start()
     {
         //healthBar = GetComponent<Slider>();
@@ -18,7 +18,7 @@ public class EnemyHealthBar : MonoBehaviour
         //transform.position = enemy.position;
         
         // Puts bar below enemy
-        transform.SetAsLastSibling();
+        //transform.SetAsLastSibling();
     }
     public void UpdateEnemyHealth()
     {

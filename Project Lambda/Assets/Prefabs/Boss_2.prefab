@@ -147,10 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201af5916b3ca3b4b8aa78f7f6a8440a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3513264315559762385, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
   rigidBody: {fileID: 0}
   BulletPrefab: {fileID: 6022802799066404064, guid: a4e4f3747c9450f4c8c6263db3a4e2a4, type: 3}
   bossSpeed: 0
+  maxHitPoints: 0
   hitPoints: 0
   DamageFromBullet: 0
   fireRate: 0
@@ -169,6 +170,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8b91f35f98baa4c8dd3fd206f91059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 7287398971371417382}
-  background: {fileID: 5697341684969760512, guid: e60cd406f29fe5c499898002e73726ae, type: 3}
-  bar: {fileID: 5642270305573272583, guid: 564a5f641d949b24eab02d2a9698d9e5, type: 3}
