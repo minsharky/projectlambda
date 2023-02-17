@@ -5,13 +5,15 @@ using UnityEngine;
 public class BabyMob : MonoBehaviour
 {
     public Transform player;
+    // Note: We get "DamageFromBullet" values directly from Player Shooting now
+    public Shooting playerShooting;
     public Rigidbody2D rigidBody;
     public GameObject BulletPrefab;
 
     //Boss Attributes
     public float babySpeed;
     public float hitPoints;
-    public float DamageFromBullet;
+    // public float DamageFromBullet;
     public float fireRate;
     public float babyP2Speed;
 
@@ -22,11 +24,12 @@ public class BabyMob : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>().transform;
+        playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         rigidBody = GetComponent<Rigidbody2D>();
 
         babySpeed = 1.5f;
         hitPoints = 5;
-        DamageFromBullet = 0.5f;
+        // DamageFromBullet = 0.5f;
         fireRate = 2f;
 
         // Baby starts firing bullets after 3 seconds
@@ -58,7 +61,7 @@ public class BabyMob : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerBullet>())
         {
-            hitPoints -= DamageFromBullet;
+            hitPoints -= playerShooting.actualBulletPower;
         }
     }
 

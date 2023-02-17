@@ -70,7 +70,7 @@ public class Boss1 : MonoBehaviour
     //When Boss is hit by the player's bullet, it takes 2 damage
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerBullet>()) {
-            hitPoints -= playerShooting.actual;
+            hitPoints -= playerShooting.actualBulletPower;
         }
     }
 
