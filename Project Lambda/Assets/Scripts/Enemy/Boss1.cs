@@ -7,12 +7,15 @@ public class Boss1 : MonoBehaviour
     public Transform player;
     // Note: The details of damage from a given bullet are retrieved from the player
     public Shooting playerShooting;
+    // UpgradeTracker
+    public UpgradeTracker upgradeTracker;
     public Rigidbody2D rigidBody;
     public GameObject BulletPrefab;
 
     // Boss Attributes
     public float bossSpeed;
     public float hitPoints;
+    public float expValue = 10;
     // public float DamageFromBullet;
     public float fireRate;
     public float bossP2Speed;
@@ -25,6 +28,7 @@ public class Boss1 : MonoBehaviour
     {
         player = FindObjectOfType<Player>().transform;
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
+        upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
         rigidBody = GetComponent<Rigidbody2D>();
 
         bossSpeed = 1.5f;
@@ -63,6 +67,7 @@ public class Boss1 : MonoBehaviour
 
         //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0) {
+            upgradeTracker.IncreaseExp(expValue);
             Destroy(this.gameObject);
         }
     }
