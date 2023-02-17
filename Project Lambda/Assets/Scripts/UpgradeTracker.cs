@@ -140,6 +140,5 @@ public class UpgradeTracker : MonoBehaviour
     public void IncreaseExp(float delta)
     {
         exp += delta;
-        expBar.UpdateExpBar();
     }
 }
