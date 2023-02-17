@@ -5,13 +5,15 @@ using UnityEngine;
 public class Boss1 : MonoBehaviour
 {
     public Transform player;
+    // Note: The details of damage from a given bullet are retrieved from the player
+    public Shooting playerShooting;
     public Rigidbody2D rigidBody;
     public GameObject BulletPrefab;
 
-    //Boss Attributes
+    // Boss Attributes
     public float bossSpeed;
     public float hitPoints;
-    public float DamageFromBullet;
+    // public float DamageFromBullet;
     public float fireRate;
     public float bossP2Speed;
     
@@ -22,11 +24,12 @@ public class Boss1 : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>().transform;
+        playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         rigidBody = GetComponent<Rigidbody2D>();
 
         bossSpeed = 1.5f;
-        hitPoints = 100;
-        DamageFromBullet = 2f;
+        hitPoints = 25;
+        //  DamageFromBullet = 2f;
         fireRate = 2f;
         bossP2Speed = 2.5f;
 
@@ -67,7 +70,7 @@ public class Boss1 : MonoBehaviour
     //When Boss is hit by the player's bullet, it takes 2 damage
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerBullet>()) {
-            hitPoints -= DamageFromBullet;
+            hitPoints -= playerShooting.actual;
         }
     }
 

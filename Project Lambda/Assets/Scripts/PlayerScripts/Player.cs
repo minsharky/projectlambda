@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Rigid Body variable
     public Rigidbody2D rigidBody;
+
+    // HitPoints variables
+    // Current number of hit points
     public float hitPoints = 100f;
+    // Maximum number of hit points
     private float maxHitPoints = 100f;
+    // The maximum number of hit points assigned at the beginning of the game
+    // This is used to compute maxHitPoints after upgrades
     private float baseHitPoints = 100f;
+
 
     // Player Damages from Boss
     public float damageFromContact;
@@ -36,10 +44,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-
         damageFromContact = 5f;
         damageFromBullet = 2f;
-
         // Components
         upgrades = GetComponent<UpgradeTracker>();
         healthBar = GameObject.FindGameObjectWithTag("Player Health Bar").GetComponent<PlayerHealthBar>();

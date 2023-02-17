@@ -11,10 +11,14 @@ public class Shooting : MonoBehaviour
     public GameObject BulletPrefab;
 
     /// <summary>
-    /// How powerful our bullets are
+    /// How powerful our bullets are at the beginning of game. Used to calculate actualBulletPower with upgrades.
     /// </summary>
+    public float baseBulletPower = 0.5f;
 
-    public float BulletPower = 1;
+    /// <summary>
+    /// How powerful our bullets are at a given moment
+    /// </summary>
+    public float actualBulletPower = 0.5f;
 
     /// <summary>
     /// How fast we should shoot our bullets
@@ -54,7 +58,7 @@ public class Shooting : MonoBehaviour
 
     public void UpdateBitPower()
     {
-        BulletPower = 1 + 0.25f * (upgrades.uBitPower);
+        actualBulletPower = baseBulletPower + 0.25f * (upgrades.uBitPower);
     }
 
     public void UpdateFiringSpeed()
