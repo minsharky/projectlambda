@@ -70,6 +70,7 @@ public class UpgradeTracker : MonoBehaviour
         cooldownUpgradeBar = GameObject.FindGameObjectWithTag("Cooldown Bar").GetComponent<CooldownUpgradeBar>();
         powerUpgradeBar = GameObject.FindGameObjectWithTag("Power Bar").GetComponent<PowerUpgradeBar>();
         expBar = GameObject.FindGameObjectWithTag("Experience Bar").GetComponent<ExperienceBar>();
+        ;
     }
 
     // TODO: Check if the player can upgrade every frame (how many upgrade points).

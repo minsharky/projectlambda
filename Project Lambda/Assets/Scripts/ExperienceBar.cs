@@ -22,6 +22,11 @@ public class ExperienceBar : MonoBehaviour
         expBar.maxValue = expMax;
     }
 
+    void Update()
+    {
+        UpdateExpBar();
+    }
+
     // UpdateExpBar is something for UpgradeTracker to call to update the UI
     public void UpdateExpBar()
     {
