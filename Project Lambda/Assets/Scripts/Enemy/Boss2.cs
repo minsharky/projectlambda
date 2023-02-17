@@ -6,6 +6,7 @@ public class Boss2 : MonoBehaviour
 {
     public Transform player;
     public Shooting playerShooting;
+    public UpgradeTracker upgradeTracker;
     public Rigidbody2D rigidBody;
     public GameObject BulletPrefab;
 
@@ -13,6 +14,7 @@ public class Boss2 : MonoBehaviour
     public float bossSpeed;
     public float maxHitPoints;
     public float hitPoints;
+    public float expValue = 10;
     // public float DamageFromBullet;
     public float fireRate;
     public float bossP2Speed;
@@ -26,6 +28,7 @@ public class Boss2 : MonoBehaviour
     {
         player = FindObjectOfType<Player>().transform;
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
+        upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
         rigidBody = GetComponent<Rigidbody2D>();
 
         bossSpeed = 1.5f;
@@ -66,6 +69,7 @@ public class Boss2 : MonoBehaviour
 
         //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0) {
+            upgradeTracker.IncreaseExp(expValue);
             Destroy(this.gameObject);
         }
 
