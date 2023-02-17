@@ -11,6 +11,7 @@ public class UpgradeTracker : MonoBehaviour
 
     /// Experience tracker (Foundation of Upgrade Economy)
     public float exp = 0;
+    public float expToUpgrade = 20;
 
     /// <summary>
     /// Fields that store the potency of each upgrade
@@ -43,6 +44,9 @@ public class UpgradeTracker : MonoBehaviour
 
     // Power Upgrade Bar
     PowerUpgradeBar powerUpgradeBar;
+
+    // Experience Bar
+    ExperienceBar expBar;
     
 
     
@@ -65,7 +69,7 @@ public class UpgradeTracker : MonoBehaviour
         healthUpgradeBar = GameObject.FindGameObjectWithTag("Health Upgrade Bar").GetComponent<HealthUpgradeBar>();
         cooldownUpgradeBar = GameObject.FindGameObjectWithTag("Cooldown Bar").GetComponent<CooldownUpgradeBar>();
         powerUpgradeBar = GameObject.FindGameObjectWithTag("Power Bar").GetComponent<PowerUpgradeBar>();
-
+        expBar = GameObject.FindGameObjectWithTag("Experience Bar").GetComponent<ExperienceBar>();
     }
 
     // TODO: Check if the player can upgrade every frame (how many upgrade points).
@@ -74,7 +78,7 @@ public class UpgradeTracker : MonoBehaviour
     // TODO LATER: Display the upgrade values on screen, hopefully using something like a bar.
     void Update()
     {
-        if (exp >= 20)
+        if (exp >= expToUpgrade)
         {
             // Press p to increase player speed.
             if (Input.GetKeyDown(KeyCode.P))
@@ -135,5 +139,6 @@ public class UpgradeTracker : MonoBehaviour
     public void IncreaseExp(float delta)
     {
         exp += delta;
+        expBar.UpdateExpBar();
     }
 }
