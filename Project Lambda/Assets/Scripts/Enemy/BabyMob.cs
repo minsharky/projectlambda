@@ -7,12 +7,15 @@ public class BabyMob : MonoBehaviour
     public Transform player;
     // Note: We get "DamageFromBullet" values directly from Player Shooting now
     public Shooting playerShooting;
+    public UpgradeTracker upgradeTracker;
     public Rigidbody2D rigidBody;
     public GameObject BulletPrefab;
 
     //Boss Attributes
     public float babySpeed;
     public float hitPoints;
+    // How much is this enemy worth in terms of player experience?
+    public float expValue = 1;
     // public float DamageFromBullet;
     public float fireRate;
     public float babyP2Speed;
@@ -26,6 +29,7 @@ public class BabyMob : MonoBehaviour
         player = FindObjectOfType<Player>().transform;
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         rigidBody = GetComponent<Rigidbody2D>();
+        upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
 
         babySpeed = 1.5f;
         hitPoints = 5;
@@ -52,6 +56,9 @@ public class BabyMob : MonoBehaviour
         //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0)
         {
+            // Update Player's exp level
+            upgradeTracker.IncreaseExp(expValue);
+            // Enemy should die
             Destroy(this.gameObject);
         }
     }
