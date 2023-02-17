@@ -9,11 +9,8 @@ public class UpgradeTracker : MonoBehaviour
     /// is enacted as well as visualized.
     /// </summary>
 
-    /// <summary>
-    /// Field that controls whether we have upgrade points or not
-    /// </summary>
-
-    public int upgradePoints;
+    /// Experience tracker (Foundation of Upgrade Economy)
+    public float exp = 0;
 
     /// <summary>
     /// Fields that store the potency of each upgrade
@@ -46,16 +43,12 @@ public class UpgradeTracker : MonoBehaviour
 
     // Power Upgrade Bar
     PowerUpgradeBar powerUpgradeBar;
-
-
-    // Health Bar Component
-    // HealthBar hb;
+    
 
     
     // Start is called before the first frame update
     void Start()
     {
-        upgradePoints = 0;
         uBitPower = 0;
         uFiringSpeed = 0;
         uHealth = 0;
@@ -81,53 +74,66 @@ public class UpgradeTracker : MonoBehaviour
     // TODO LATER: Display the upgrade values on screen, hopefully using something like a bar.
     void Update()
     {
-        // Press p to increase player speed.
-        if (Input.GetKeyDown(KeyCode.P))
+        if (exp >= 20)
         {
-            uPlayerSpeed++;
-            // If uPlayerSpeed == 3, reset to 0
-            if (uPlayerSpeed == 3)
+            // Press p to increase player speed.
+            if (Input.GetKeyDown(KeyCode.P))
             {
-                uPlayerSpeed = 0;
+                uPlayerSpeed++;
+                exp -= 20;
+                // If uPlayerSpeed == 3, reset to 0
+                if (uPlayerSpeed == 3)
+                {
+                    uPlayerSpeed = 0;
+                }
+                playerMovement.UpdateMoveSpeed();
+                speedBar.SpeedBarUpdate();
             }
-            playerMovement.UpdateMoveSpeed();
-            speedBar.SpeedBarUpdate();
-        }
-        // Press f to increase firing speed
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            uFiringSpeed++;
-            // If uFiringSpeed == 3, reset to 0
-            if (uFiringSpeed == 3)
+            // Press f to increase firing speed
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                uFiringSpeed = 0;
+                uFiringSpeed++;
+                exp -= 20;
+                // If uFiringSpeed == 3, reset to 0
+                if (uFiringSpeed == 3)
+                {
+                    uFiringSpeed = 0;
+                }
+                shooting.UpdateFiringSpeed();
+                cooldownUpgradeBar.CooldownUpgradeBarUpdate();
             }
-            shooting.UpdateFiringSpeed();
-            cooldownUpgradeBar.CooldownUpgradeBarUpdate();
-        }
-        // Press b to increase bit power
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            uBitPower++;
-            // If uBitPower == 3, reset to 0
-            if (uBitPower == 3)
+            // Press b to increase bit power
+            if (Input.GetKeyDown(KeyCode.B))
             {
-                uBitPower = 0;
+                uBitPower++;
+                exp -= 20;
+                // If uBitPower == 3, reset to 0
+                if (uBitPower == 3)
+                {
+                    uBitPower = 0;
+                }
+                shooting.UpdateBitPower();
+                powerUpgradeBar.PowerUpgradeBarUpdate();
             }
-            shooting.UpdateBitPower();
-            powerUpgradeBar.PowerUpgradeBarUpdate();
-        }
-        // Press h to increase health
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            uHealth++;
-            // If uHealth == 3, reset to 0
-            if (uHealth == 3)
+            // Press h to increase health
+            if (Input.GetKeyDown(KeyCode.H))
             {
-                uHealth = 0;
+                uHealth++;
+                exp -= 20;
+                // If uHealth == 3, reset to 0
+                if (uHealth == 3)
+                {
+                    uHealth = 0;
+                }
+                player.UpdateHealth();
+                healthUpgradeBar.HealthUpgradeBarUpdate();
             }
-            player.UpdateHealth();
-            healthUpgradeBar.HealthUpgradeBarUpdate();
         }
+    }
+
+    // Update exp
+    public void IncreaseExp(float delta)
+    {
+        exp += delta;
     }
 }
