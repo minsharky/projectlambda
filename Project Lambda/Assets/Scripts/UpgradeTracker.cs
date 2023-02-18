@@ -79,60 +79,70 @@ public class UpgradeTracker : MonoBehaviour
     // TODO LATER: Display the upgrade values on screen, hopefully using something like a bar.
     void Update()
     {
+    }
+
+    public void TryToUpgradeSpeed()
+    {
+        // Press p to increase player speed.
         if (exp >= expToUpgrade)
         {
-            // Press p to increase player speed.
-            if (Input.GetKeyDown(KeyCode.P))
+            uPlayerSpeed++;
+            exp -= 20;
+            // If uPlayerSpeed == 3, reset to 0
+            if (uPlayerSpeed == 3)
             {
-                uPlayerSpeed++;
-                exp -= 20;
-                // If uPlayerSpeed == 3, reset to 0
-                if (uPlayerSpeed == 3)
-                {
-                    uPlayerSpeed = 0;
-                }
-                playerMovement.UpdateMoveSpeed();
-                speedBar.SpeedBarUpdate();
+                uPlayerSpeed = 3;
             }
-            // Press f to increase firing speed
-            if (Input.GetKeyDown(KeyCode.F))
+            playerMovement.UpdateMoveSpeed();
+            speedBar.SpeedBarUpdate();
+        }
+    }
+
+    public void TryToUpgradeHealth()
+    {
+        if (exp >= expToUpgrade)
+        {
+            uHealth++;
+            exp -= 20;
+            // If uHealth == 3, reset to 0
+            if (uHealth == 3)
             {
-                uFiringSpeed++;
-                exp -= 20;
-                // If uFiringSpeed == 3, reset to 0
-                if (uFiringSpeed == 3)
-                {
-                    uFiringSpeed = 0;
-                }
-                shooting.UpdateFiringSpeed();
-                cooldownUpgradeBar.CooldownUpgradeBarUpdate();
+                uHealth = 3;
             }
-            // Press b to increase bit power
-            if (Input.GetKeyDown(KeyCode.B))
+            player.UpdateHealth();
+            healthUpgradeBar.HealthUpgradeBarUpdate();
+        }
+    }
+
+    public void TryToUpgradeFiringSpeed()
+    {
+        if (exp >= expToUpgrade)
+        {
+            uFiringSpeed++;
+            exp -= 20;
+            // If uFiringSpeed == 3, reset to 0
+            if (uFiringSpeed == 3)
             {
-                uBitPower++;
-                exp -= 20;
-                // If uBitPower == 3, reset to 0
-                if (uBitPower == 3)
-                {
-                    uBitPower = 0;
-                }
-                shooting.UpdateBitPower();
-                powerUpgradeBar.PowerUpgradeBarUpdate();
+                uFiringSpeed = 0;
             }
-            // Press h to increase health
-            if (Input.GetKeyDown(KeyCode.H))
+            shooting.UpdateFiringSpeed();
+            cooldownUpgradeBar.CooldownUpgradeBarUpdate();
+        }
+    }
+
+    public void TryToUpgradePower()
+    {
+        if (exp >= expToUpgrade)
+        {
+            uBitPower++;
+            exp -= 20;
+            // If uBitPower == 3, reset to 0
+            if (uBitPower == 3)
             {
-                uHealth++;
-                exp -= 20;
-                // If uHealth == 3, reset to 0
-                if (uHealth == 3)
-                {
-                    uHealth = 0;
-                }
-                player.UpdateHealth();
-                healthUpgradeBar.HealthUpgradeBarUpdate();
+                uBitPower = 0;
             }
+            shooting.UpdateBitPower();
+            powerUpgradeBar.PowerUpgradeBarUpdate();
         }
     }
 
