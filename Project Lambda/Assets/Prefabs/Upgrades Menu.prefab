@@ -1205,6 +1205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d33ba9b2779a149887ab1c751b7f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  upgradeTracker: {fileID: 0}
 --- !u!1 &6638612875350336285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1219,7 @@ GameObject:
   - component: {fileID: 7107542797739825222}
   - component: {fileID: 7506027285410251618}
   - component: {fileID: 6852667180518824691}
+  - component: {fileID: 6405383812703122913}
   m_Layer: 5
   m_Name: Health Upgrade Button
   m_TagString: Untagged
@@ -1326,6 +1329,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6405383812703122913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6638612875350336285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ff70348e71d8448b4eee0eb585291a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  upgradeTracker: {fileID: 0}
 --- !u!1 &6663629814855315324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,6 +1355,7 @@ GameObject:
   - component: {fileID: 6167193841661042462}
   - component: {fileID: 670595453991859351}
   - component: {fileID: 5218592054690302447}
+  - component: {fileID: 5287147556393902284}
   m_Layer: 5
   m_Name: Cooldown Upgrade Button
   m_TagString: Untagged
@@ -1447,6 +1465,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5287147556393902284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663629814855315324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f247cc2c7cf614d881bfc60b38c2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  upgradeTracker: {fileID: 0}
 --- !u!1 &8480710707635983065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1491,7 @@ GameObject:
   - component: {fileID: 190659636004321594}
   - component: {fileID: 8643285063941012709}
   - component: {fileID: 1186384245533641266}
+  - component: {fileID: 6333496586356446946}
   m_Layer: 5
   m_Name: Power Upgrade Button
   m_TagString: Untagged
@@ -1568,3 +1601,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6333496586356446946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480710707635983065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5537b2f23787e5840ae5c5e854335064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
