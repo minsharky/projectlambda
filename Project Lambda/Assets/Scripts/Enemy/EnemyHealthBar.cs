@@ -20,9 +20,9 @@ public class EnemyHealthBar : MonoBehaviour
         // Puts bar below enemy
         transform.SetAsLastSibling();
     }
-    public void UpdateEnemyHealth()
+    public void UpdateEnemyHealth(float hitPoints, float maxHitPoints)
     {
-        healthBar.maxValue = enemy.getMaxHitPoints();
-        healthBar.value = enemy.getHitPoints();
+        //healthBar.maxValue = enemy.getMaxHitPoints();
+        //healthBar.value = enemy.getHitPoints();
     }
 }
