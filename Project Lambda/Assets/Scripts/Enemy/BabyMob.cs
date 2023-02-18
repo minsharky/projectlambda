@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class BabyMob : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class BabyMob : MonoBehaviour
     public float timeBullet;
     public float constant;
 
+    // Get AI component
+    public IAstarAI seeker;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,7 @@ public class BabyMob : MonoBehaviour
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         rigidBody = GetComponent<Rigidbody2D>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
+        seeker = GetComponent<IAstarAI>();
 
         babySpeed = 1.5f;
         hitPoints = 5;
@@ -44,8 +49,8 @@ public class BabyMob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidBody.velocity = babySpeed * (player.position - transform.position).normalized;
-
+        // rigidBody.velocity = babySpeed * (player.position - transform.position).normalized;
+        seeker.destination = FindObjectOfType<Player>().transform.position;
         //Boss shoots every 2 seconds
         if (Time.time > timeBullet)
         {
