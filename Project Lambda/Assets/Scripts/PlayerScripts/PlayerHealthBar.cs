@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class PlayerHealthBar : MonoBehaviour
+
+public class PlayerHealthBar : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     // Get the HealthBar Slider component
     Slider healthBar;
@@ -25,6 +27,17 @@ public class PlayerHealthBar : MonoBehaviour
         healthBar.maxValue = player.getMaxHitPoints();
         healthBar.value = player.getHitPoints();
     }
+
+    // For Tooltip
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Tooltip.ShowStatic("Health Bar");
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Tooltip.HideStatic();
+    }
+
 
     private void Update()
     {

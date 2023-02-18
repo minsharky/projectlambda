@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class CooldownUpgradeBar : MonoBehaviour
+public class CooldownUpgradeBar : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     Slider cooldownUpgradeBar;
     UpgradeTracker upgradeTracker;
@@ -26,5 +27,16 @@ public class CooldownUpgradeBar : MonoBehaviour
     private void Update()
     {
         CooldownUpgradeBarUpdate();
+    }
+
+    // For Tooltip
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Tooltip.ShowStatic("Firing Rate Upgrade");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Tooltip.HideStatic();
     }
 }

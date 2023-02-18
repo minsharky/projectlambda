@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
-public class SpeedUpgradeBar : MonoBehaviour
+public class SpeedUpgradeBar : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     // Slider
     Slider speedBar;
@@ -30,4 +31,15 @@ public class SpeedUpgradeBar : MonoBehaviour
     {
         SpeedBarUpdate();
     }
+
+    // For Tooltip
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Tooltip.ShowStatic("Speed Upgrade");
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Tooltip.HideStatic();
+    }
+
 }

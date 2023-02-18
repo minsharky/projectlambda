@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class PowerUpgradeBar : MonoBehaviour
+public class PowerUpgradeBar : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
     Slider powerBar;
@@ -27,5 +28,15 @@ public class PowerUpgradeBar : MonoBehaviour
     private void Update()
     {
         PowerUpgradeBarUpdate();
+    }
+    // For Tooltip
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Tooltip.ShowStatic("Bullet Damage Upgrade");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Tooltip.HideStatic();
     }
 }

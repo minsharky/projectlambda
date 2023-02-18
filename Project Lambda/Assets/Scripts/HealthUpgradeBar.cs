@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
-public class HealthUpgradeBar : MonoBehaviour
+public class HealthUpgradeBar : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     Slider healthUpgradeBar;
     UpgradeTracker upgradeTracker;
@@ -28,5 +29,14 @@ public class HealthUpgradeBar : MonoBehaviour
     private void Update()
     {
         HealthUpgradeBarUpdate();
+    }
+    // For Tooltip
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Tooltip.ShowStatic("Health Upgrade");
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Tooltip.HideStatic();
     }
 }
