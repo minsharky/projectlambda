@@ -87,11 +87,14 @@ public class UpgradeTracker : MonoBehaviour
         if (exp >= expToUpgrade)
         {
             uPlayerSpeed++;
-            exp -= 20;
             // If uPlayerSpeed == 3, reset to 0
             if (uPlayerSpeed == 3)
             {
                 uPlayerSpeed = 3;
+            }
+            else
+            {
+                exp -= 20;
             }
             playerMovement.UpdateMoveSpeed();
             speedBar.SpeedBarUpdate();
@@ -103,11 +106,14 @@ public class UpgradeTracker : MonoBehaviour
         if (exp >= expToUpgrade)
         {
             uHealth++;
-            exp -= 20;
             // If uHealth == 3, reset to 0
             if (uHealth == 3)
             {
                 uHealth = 3;
+            }
+            else
+            {
+                exp -= 20;
             }
             player.UpdateHealth();
             healthUpgradeBar.HealthUpgradeBarUpdate();
@@ -119,11 +125,14 @@ public class UpgradeTracker : MonoBehaviour
         if (exp >= expToUpgrade)
         {
             uFiringSpeed++;
-            exp -= 20;
             // If uFiringSpeed == 3, reset to 0
             if (uFiringSpeed == 3)
             {
-                uFiringSpeed = 0;
+                uFiringSpeed = 3;
+            }
+            else
+            {
+                exp -= 20;
             }
             shooting.UpdateFiringSpeed();
             cooldownUpgradeBar.CooldownUpgradeBarUpdate();
@@ -135,11 +144,14 @@ public class UpgradeTracker : MonoBehaviour
         if (exp >= expToUpgrade)
         {
             uBitPower++;
-            exp -= 20;
             // If uBitPower == 3, reset to 0
             if (uBitPower == 3)
             {
-                uBitPower = 0;
+                uBitPower = 3;
+            }
+            else
+            {
+                exp -= 20;
             }
             shooting.UpdateBitPower();
             powerUpgradeBar.PowerUpgradeBarUpdate();
