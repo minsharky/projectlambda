@@ -14,6 +14,7 @@ TagManager:
   - Power Bar
   - Player Health Bar
   - Experience Bar
+  - Bounce
   layers:
   - Default
   - TransparentFX

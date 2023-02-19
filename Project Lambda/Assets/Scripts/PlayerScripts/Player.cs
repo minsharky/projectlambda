@@ -62,6 +62,12 @@ public class Player : MonoBehaviour
         {
             hitPoints -= damageFromBullet;
         }
+        if (collision.gameObject.CompareTag("Bounce"))
+        {
+            Vector2 difference = transform.position - collision.gameObject.transform.position;
+            //makes it looks like teleports :/
+            rigidBody.AddForce(difference*5000f, ForceMode2D.Force);
+        }
         healthBar.UpdatePlayerHealth();
         checkGameOver();
     }
