@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1467149471591021498}
   - component: {fileID: 1882564502905158615}
   - component: {fileID: 3324972536337570965}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boss_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -161,6 +161,7 @@ MonoBehaviour:
   bossP2Speed: 2.5
   timeBullet: 5
   constant: 1
+  path: {fileID: 0}
 --- !u!114 &1467149471591021498
 MonoBehaviour:
   m_ObjectHideFlags: 0
