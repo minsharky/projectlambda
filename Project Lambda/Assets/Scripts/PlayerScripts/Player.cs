@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             hitPoints -= damageFromContact;
+            rigidBody.AddForce(collision.gameObject.transform.right * 100);
         }
         if (collision.gameObject.GetComponent<EnemyBullet>())
         {

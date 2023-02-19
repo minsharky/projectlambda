@@ -16,7 +16,7 @@ public class PlayerHealthBar : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         healthBar = GetComponent<Slider>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        healthBar.value = 1f;
+        healthBar.minValue = -5f;
     }
 
     // Update Player Health
@@ -25,6 +25,7 @@ public class PlayerHealthBar : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void UpdatePlayerHealth()
     {
         healthBar.maxValue = player.getMaxHitPoints();
+        healthBar.minValue = - healthBar.maxValue / 20;
         healthBar.value = player.getHitPoints();
     }
 
