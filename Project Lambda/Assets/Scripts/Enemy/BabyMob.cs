@@ -44,7 +44,7 @@ public class BabyMob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidBody.velocity = babySpeed * (player.position - transform.position).normalized;
+        // rigidBody.velocity = babySpeed * (player.position - transform.position).normalized;
 
         //Boss shoots every 2 seconds
         if (Time.time > timeBullet)
