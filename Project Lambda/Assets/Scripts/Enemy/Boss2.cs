@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Boss2 : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Boss2 : MonoBehaviour
     public UpgradeTracker upgradeTracker;
     public Rigidbody2D rigidBody;
     public GameObject BulletPrefab;
+    public AIPath path; 
 
     //Boss Attributes
     public float bossSpeed;
@@ -30,6 +32,7 @@ public class Boss2 : MonoBehaviour
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
         rigidBody = GetComponent<Rigidbody2D>();
+        path = GetComponent<AIPath>();
 
         bossSpeed = 1.5f;
         maxHitPoints = 50f;
@@ -63,7 +66,10 @@ public class Boss2 : MonoBehaviour
             Shoot();
             constant = 0.8f;
             Shoot();
-            bossSpeed = bossP2Speed;
+            // bossSpeed = bossP2Speed;
+            // Recall that speed is controlled by the AIPath component
+            path.maxSpeed = bossP2Speed;
+
             timeBullet += fireRate;
         }
 
@@ -80,7 +86,7 @@ public class Boss2 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerBullet>()) {
             hitPoints -= playerShooting.actualBulletPower;
-            if (hitPoints <= 50)
+            if (hitPoints <= 25)
             {
                 bossSpeed = 5.0f;
                 constant = 1.2f;

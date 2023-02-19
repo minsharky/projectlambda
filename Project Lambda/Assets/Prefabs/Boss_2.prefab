@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 1138301151897419274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5046, y: 2.4561, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -155,6 +155,7 @@ MonoBehaviour:
   upgradeTracker: {fileID: 0}
   rigidBody: {fileID: 0}
   BulletPrefab: {fileID: 6022802799066404064, guid: a4e4f3747c9450f4c8c6263db3a4e2a4, type: 3}
+  path: {fileID: 0}
   bossSpeed: 0
   maxHitPoints: 0
   hitPoints: 0
@@ -216,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.3
+  radius: 0.4
   height: 2
   canMove: 1
   maxSpeed: 1.5
@@ -243,7 +244,7 @@ MonoBehaviour:
   endReachedDistance: 0
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
+  whenCloseToDestination: 1
   constrainInsideGraph: 0
 --- !u!114 &3386040290669984785
 MonoBehaviour:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Boss1 : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class Boss1 : MonoBehaviour
     public float timeBullet;
     public float constant;
 
+    // Get the AIPath Component
+    public AIPath path;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,7 @@ public class Boss1 : MonoBehaviour
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
         rigidBody = GetComponent<Rigidbody2D>();
+        path = GetComponent<AIPath>();
 
         bossSpeed = 1.5f;
         hitPoints = 25;
@@ -45,7 +50,7 @@ public class Boss1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidBody.velocity = bossSpeed * (player.position - transform.position).normalized;
+        // rigidBody.velocity = bossSpeed * (player.position - transform.position).normalized;
 
         //Boss shoots every 2 seconds
         if (Time.time > timeBullet)
@@ -55,13 +60,15 @@ public class Boss1 : MonoBehaviour
 
             //Phase 2
             //After Boss takes 50% damage, Boss now triple shoots and moves 2.5x
-            if (hitPoints <= 50)
+            if (hitPoints <= 12.5)
             {
                 constant = 1.2f;
                 Shoot();
                 constant = 0.8f;
                 Shoot();
-                bossSpeed = bossP2Speed;
+                // bossSpeed = bossP2Speed;
+                path.maxSpeed = bossP2Speed;
+
             }
         }
 
