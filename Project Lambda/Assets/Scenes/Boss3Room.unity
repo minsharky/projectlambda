@@ -1136,6 +1136,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Boss3Route
   new_pos: {x: -30.55433, y: 37.99508, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &1009522286
 BoxCollider2D:
   m_ObjectHideFlags: 0

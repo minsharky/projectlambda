@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +29,33 @@ public class Player : MonoBehaviour
     // HealthBar
     PlayerHealthBar healthBar;
 
+    Scene scene;
+
+    private Boolean boss_one_complete;
+    public Boolean Boss_one_complete
+    {
+        get { return boss_one_complete; }
+        set { boss_one_complete = value; }
+    }
+    private Boolean boss_two_complete;
+    public Boolean Boss_two_complete
+    {
+        get { return boss_two_complete; }
+        set { boss_two_complete = value; }
+    }
+    private Boolean boss_three_complete;
+    public Boolean Boss_three_complete
+    {
+        get { return boss_three_complete; }
+        set { boss_three_complete = value; }
+    }
+    private Boolean boss_four_complete;
+    public Boolean Boss_four_complete
+    {
+        get { return boss_four_complete; }
+        set { boss_four_complete = value; }
+    }
+
     private static Player _instance;
     private void Awake()
     {
@@ -49,6 +78,25 @@ public class Player : MonoBehaviour
         // Components
         upgrades = GetComponent<UpgradeTracker>();
         healthBar = GameObject.FindGameObjectWithTag("Player Health Bar").GetComponent<PlayerHealthBar>();
+
+        boss_one_complete = false;
+        boss_two_complete = false;
+        boss_three_complete = false;
+        boss_four_complete = false;
+        scene = SceneManager.GetActiveScene();
+    }
+
+    private void Update()
+    {
+        scene = SceneManager.GetActiveScene();
+        if ((Boss_one_complete && (scene.name == "Boss1Route" || scene.name == "Boss1Room"))||
+            (Boss_two_complete && (scene.name == "Boss2Route" || scene.name == "Boss2Room"))||
+            (Boss_three_complete && (scene.name == "Boss3Route" || scene.name == "Boss3Room")) ||
+            (Boss_four_complete && scene.name == "Boss4Room")) {
+            foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
+                Destroy(enemy);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
