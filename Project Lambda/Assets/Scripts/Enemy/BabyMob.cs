@@ -32,7 +32,7 @@ public class BabyMob : MonoBehaviour
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         rigidBody = GetComponent<Rigidbody2D>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
-        healthBar = GetComponentInChildren<EnemyHealthBar>();
+        //healthBar = GetComponentInChildren<EnemyHealthBar>();
 
         babySpeed = 1.5f;
         hitPoints = 5;
@@ -65,7 +65,7 @@ public class BabyMob : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        healthBar.UpdateEnemyHealth(hitPoints, maxHitPoints);
+        //healthBar.UpdateEnemyHealth(hitPoints, maxHitPoints);
     }
 
     //When Boss is hit by the player's bullet, it takes 2 damage
