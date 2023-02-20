@@ -11,18 +11,19 @@ public class EnemyHealthBar : MonoBehaviour
     private void Start()
     {
         healthBar = GetComponent<Slider>();
+        enemy = transform.parent.gameObject;
         healthBar.value = 0;
     }
     void Update()
     {
-        transform.position = enemy.transform.position;
-        
+        //transform.position = enemy.transform.position;
+        transform.localPosition = Vector3.zero;
         // Puts bar below enemy
         transform.SetAsLastSibling();
     }
     public void UpdateEnemyHealth(float hitPoints, float maxHitPoints)
     {
-        //healthBar.maxValue = enemy.getMaxHitPoints();
-        //healthBar.value = enemy.getHitPoints();
+        healthBar.maxValue = hitPoints;
+        healthBar.value = maxHitPoints;
     }
 }

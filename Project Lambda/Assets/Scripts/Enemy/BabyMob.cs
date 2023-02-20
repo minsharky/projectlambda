@@ -10,10 +10,12 @@ public class BabyMob : MonoBehaviour
     public UpgradeTracker upgradeTracker;
     public Rigidbody2D rigidBody;
     public GameObject BulletPrefab;
+    public EnemyHealthBar healthBar;
 
     //Boss Attributes
     public float babySpeed;
     public float hitPoints;
+    public float maxHitPoints = 5;
     // How much is this enemy worth in terms of player experience?
     public float expValue = 1;
     // public float DamageFromBullet;
@@ -30,6 +32,7 @@ public class BabyMob : MonoBehaviour
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         rigidBody = GetComponent<Rigidbody2D>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
+        healthBar = GetComponentInChildren<EnemyHealthBar>();
 
         babySpeed = 1.5f;
         hitPoints = 5;
@@ -61,6 +64,8 @@ public class BabyMob : MonoBehaviour
             // Enemy should die
             Destroy(this.gameObject);
         }
+
+        healthBar.UpdateEnemyHealth(hitPoints, maxHitPoints);
     }
 
     //When Boss is hit by the player's bullet, it takes 2 damage
