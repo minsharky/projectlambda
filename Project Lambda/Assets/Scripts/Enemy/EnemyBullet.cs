@@ -8,6 +8,9 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         time = Time.time;
+        int bulletLayer = LayerMask.NameToLayer("Enemy Bullet");
+        int ignoreLayer = LayerMask.NameToLayer("Enemy");
+        Physics.IgnoreLayerCollision(bulletLayer, ignoreLayer, true);
     }
     void Update()
     {
@@ -26,5 +29,6 @@ public class EnemyBullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
     }
 }
