@@ -1934,6 +1934,8 @@ MonoBehaviour:
   level: Boss1Room
   new_pos: {x: -12.33, y: 0, z: 0}
   col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &502901559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4070,6 +4072,8 @@ MonoBehaviour:
   level: Base
   new_pos: {x: -0.02, y: 6.79, z: 0}
   col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &924751170
 BoxCollider2D:
   m_ObjectHideFlags: 0
