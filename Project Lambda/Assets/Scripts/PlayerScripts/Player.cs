@@ -29,6 +29,12 @@ public class Player : MonoBehaviour
     // HealthBar
     PlayerHealthBar healthBar;
 
+    private int current_level;
+    public int Current_level { 
+        get { return current_level; } 
+        set { current_level = value; }
+    }
+
     Scene scene;
 
     private Boolean boss_one_complete;
@@ -84,6 +90,7 @@ public class Player : MonoBehaviour
         boss_three_complete = false;
         boss_four_complete = false;
         scene = SceneManager.GetActiveScene();
+        current_level = 1;
     }
 
     private void Update()
