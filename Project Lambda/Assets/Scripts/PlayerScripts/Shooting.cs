@@ -34,19 +34,30 @@ public class Shooting : MonoBehaviour
     // UpgradeTracker
     UpgradeTracker upgrades;
 
+    // Player
+    Player player;
+
     // Start
     void Start()
     {
         upgrades = GetComponent<UpgradeTracker>();
+        player = GetComponent<Player>();
     }
 
 
     // Update is called once per frame
     void Update()
     { 
-        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) && Time.time > shootCoolDown) {
-            shootCoolDown = Time.time + fireRate;
-            shootBullet();
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))) {
+            if (Time.time > shootCoolDown)
+            {
+                shootCoolDown = Time.time + fireRate;
+                shootBullet();
+            }
+        }
+        else
+        {
+            player.HealthRegen();
         }
     }
 

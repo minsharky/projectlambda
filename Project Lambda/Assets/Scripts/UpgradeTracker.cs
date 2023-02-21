@@ -115,7 +115,7 @@ public class UpgradeTracker : MonoBehaviour
             {
                 exp -= 20;
             }
-            player.UpdateHealth();
+            player.UpdateHealthUpgrade();
             healthUpgradeBar.HealthUpgradeBarUpdate();
         }
     }

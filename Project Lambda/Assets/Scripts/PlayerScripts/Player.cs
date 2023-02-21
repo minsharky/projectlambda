@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     // The maximum number of hit points assigned at the beginning of the game
     // This is used to compute maxHitPoints after upgrades
     private float baseHitPoints = 100f;
-
+    // Regen Rate
+    public float regenRate = 1f / 60f;
 
     // Player Damages from Boss
     public float damageFromContact;
@@ -129,10 +130,22 @@ public class Player : MonoBehaviour
         checkGameOver();
     }
 
-    public void UpdateHealth()
+    public void UpdateHealthUpgrade()
     {
         maxHitPoints = baseHitPoints + (50 * upgrades.uHealth);
         healthBar.UpdatePlayerHealth();
+    }
+
+    public void HealthRegen()
+    {
+        if (hitPoints + regenRate <= maxHitPoints)
+        {
+            hitPoints += regenRate;
+        }
+        else
+        {
+            hitPoints = maxHitPoints;
+        }
     }
 
     public float getHitPoints()
