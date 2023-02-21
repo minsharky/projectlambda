@@ -1208,6 +1208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Base
   new_pos: {x: -0.02, y: -6.63, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &645963729
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2950,6 +2953,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Boss3Room
   new_pos: {x: -1.735332, y: -0.9836285, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &1404909102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3561,6 +3567,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 
   new_pos: {x: 0, y: 0, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &1530624512
 SpriteRenderer:
   m_ObjectHideFlags: 0

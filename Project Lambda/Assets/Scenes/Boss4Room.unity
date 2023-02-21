@@ -993,6 +993,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Base
   new_pos: {x: 7.82, y: -0.02, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &602816983
 BoxCollider2D:
   m_ObjectHideFlags: 0
