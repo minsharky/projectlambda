@@ -135,6 +135,10 @@ PrefabInstance:
       value: Bouncer (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_TagString
       value: Bounce
       objectReference: {fileID: 0}
@@ -200,7 +204,7 @@ GameObject:
   - component: {fileID: 91581381}
   - component: {fileID: 91581383}
   - component: {fileID: 91581382}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Left Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -368,7 +372,7 @@ GameObject:
   - component: {fileID: 158860619}
   - component: {fileID: 158860621}
   - component: {fileID: 158860620}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Right Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -479,7 +483,7 @@ GameObject:
   - component: {fileID: 173259173}
   - component: {fileID: 173259175}
   - component: {fileID: 173259174}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Ceiling
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -622,7 +626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 299045301}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Bouncers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,6 +764,10 @@ PrefabInstance:
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_Name
       value: Bouncer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_TagString
@@ -1037,6 +1045,10 @@ PrefabInstance:
       value: Bouncer (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_TagString
       value: Bounce
       objectReference: {fileID: 0}
@@ -1102,7 +1114,7 @@ GameObject:
   - component: {fileID: 942460309}
   - component: {fileID: 942460311}
   - component: {fileID: 942460310}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Bottom
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1214,7 +1226,7 @@ GameObject:
   - component: {fileID: 1009522287}
   - component: {fileID: 1009522286}
   - component: {fileID: 1009522285}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: tunnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,6 +1355,10 @@ PrefabInstance:
       value: Bouncer (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_TagString
       value: Bounce
       objectReference: {fileID: 0}
@@ -1463,7 +1479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137229810}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1606,6 +1622,10 @@ PrefabInstance:
       value: Bouncer (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_TagString
       value: Bounce
       objectReference: {fileID: 0}
@@ -1670,6 +1690,10 @@ PrefabInstance:
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_Name
       value: Bouncer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_TagString
@@ -1830,6 +1854,93 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1593171623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593171625}
+  - component: {fileID: 1593171624}
+  m_Layer: 0
+  m_Name: Astar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1593171624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593171623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAACQn+vnTFXmXgIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3GkBBCb61DSA9JmNJOLr4Ia401yJJHHwGS4b93V7axS6cnlrdvd99+yJ9MaldD7o1dWimejQD2dcTIZl9GvfMJDnxr9Fp+QMd5k8KXROKR85N7aRAfU5gzFXgr8296q4icIBi0LIytFmILqXHeIVxw5QBd1niK1gh9jtgBf67mFHJEazIj6wOteTI6oZmD9mAH1PG0pXbEhhd0rnhVgyDRPf2mS3zT0DS20zJIem6Ukq7Vwvyxjr2mvHYBO0GCkBx7iwLG11S5BLktPSkdhr8WhQPfirL8+CAtDqnJy76bZnIVd7tG2TtXgSpNoqYm5fM/3qtxdBfWVE9d1XFCFXwp891Pfsy584PBDuGHgfA4nj1XO75R8FaCfjFLa4IW6PQ2UGhwMHno/54bS0vIdz3eSL0AQ93PO7lYDvVwir0fUiWrDbmubxtgrUycd1w+WNzMDxQcT8O1KRAlFb8d/OLb4Q21jkdpnUdX26UmeRsTLFHZIs6Mugk+NVaDHWaoQXPljyvM4y83eOH7f9Qjp+fSVm993Su4CIlwz0+SC9fK7M/bcqXZP4MrX4NXUkM/anK84KBSo3VzYMOWurB1sAXPB2HbIMXft8X4TNzeTzYwnt3fFdMkv5ptZlNxk0zFfA73t3ecxeOTGvvkatUIbceDa9N9co2H1n1FRkvL63jswvL9Un5UxvVMqQuzzi2Afm0ynIWDxSL4LMVCSBzQGryXOi6cfWZMmXwHIjsnymKni4O3POuzZKyW78YTkrE0fjYyRvD5mFcW3iXsqXiX7MROfwBQSwMEFAAACAgAAJCf60/p1mRtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKieYqJhVFSqqG5hVmaqUGyrnmSuWmKsYFpiqVlqoWJWaJSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAJCf6+dMVeZeAgAAFQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJCf60/p1mRtAAAAeAAAAAkAJAAAAAAAAAAAAAAAqwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &1593171625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593171623}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.68, y: -0.42143345, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1621249796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2045,7 +2156,7 @@ GameObject:
   - component: {fileID: 1955764040}
   - component: {fileID: 1955764042}
   - component: {fileID: 1955764041}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Right Wall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2213,7 +2324,7 @@ GameObject:
   - component: {fileID: 2024101158}
   - component: {fileID: 2024101160}
   - component: {fileID: 2024101159}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Right Wall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2433,6 +2544,10 @@ PrefabInstance:
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_Name
       value: Bouncer (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2688392716107468737, guid: fb6ce423b64166143a773abdd8ed0474, type: 3}
       propertyPath: m_TagString
