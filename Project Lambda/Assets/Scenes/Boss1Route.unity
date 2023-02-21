@@ -1873,6 +1873,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Boss1Room
   new_pos: {x: -12.33, y: 0, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &502901559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1959,7 +1962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502901557}
   m_LocalRotation: {x: -0.2910507, y: 0.2910685, z: -0.6444453, w: 0.64440584}
-  m_LocalPosition: {x: 17.120708, y: 7.3317127, z: -1.596247}
+  m_LocalPosition: {x: 12.35, y: 7.33, z: -5.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2978,8 +2981,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738248896}
   m_LocalRotation: {x: -0.023118947, y: 0.022699181, z: -0.7064929, w: 0.70697814}
-  m_LocalPosition: {x: 20.5935, y: 7.2979, z: -2.5523}
-  m_LocalScale: {x: 3.8052785, y: 8.693011, z: 1}
+  m_LocalPosition: {x: 18.2524, y: 7.2963, z: -2.4004}
+  m_LocalScale: {x: 3.8052785, y: 13.385499, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 481786621}
@@ -3988,6 +3991,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Base
   new_pos: {x: -0.02, y: 6.79, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &924751170
 BoxCollider2D:
   m_ObjectHideFlags: 0
