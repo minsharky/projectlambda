@@ -11,14 +11,14 @@ public class Player : MonoBehaviour
 
     // HitPoints variables
     // Current number of hit points
-    public float hitPoints = 100f;
+    public float hitPoints = 25f;
     // Maximum number of hit points
-    private float maxHitPoints = 100f;
+    private float maxHitPoints = 25f;
     // The maximum number of hit points assigned at the beginning of the game
     // This is used to compute maxHitPoints after upgrades
-    private float baseHitPoints = 100f;
+    private float baseHitPoints = 25f;
     // Regen Rate
-    public float regenRate = 1f / 60f;
+    public float regenRate = 1f / 120f;
 
     // Player Damages from Boss
     public float damageFromContact;
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
 
     public void UpdateHealthUpgrade()
     {
-        maxHitPoints = baseHitPoints + (50 * upgrades.uHealth);
+        maxHitPoints = baseHitPoints + (10 * upgrades.uHealth);
         healthBar.UpdatePlayerHealth();
     }
 
