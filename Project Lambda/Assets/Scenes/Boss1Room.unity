@@ -409,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513264315559762385, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.88
+      value: -12.27
       objectReference: {fileID: 0}
     - target: {fileID: 3513264315559762385, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: Boss1Route
-  new_pos: {x: -4.29, y: -19.15, z: 0}
+  new_pos: {x: -6.28, y: -19.15, z: 0}
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
