@@ -59,7 +59,7 @@ public class Boss4 : MonoBehaviour
         //Boss shoots every 2 seconds
         if (Time.time > timeBullet)
         {
-            twentyShoot();
+            tenShoot();
             // bossSpeed = bossP2Speed;
             // Recall that speed is controlled by the AIPath component
             path.maxSpeed = bossSpeed;
@@ -86,12 +86,12 @@ public class Boss4 : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerBullet>())
         {
             hitPoints -= playerShooting.actualBulletPower;
-            twentyShoot();
-            spawnBaby();
+            tenShoot();
             babyCounter -= 1;
             if (babyCounter == 0)
             {
                 Debug.Log(babyCounter);
+                spawnBaby();
                 babyCounter = 4;
             }
         }
@@ -105,19 +105,27 @@ public class Boss4 : MonoBehaviour
         bulletRigidBody.velocity = 10f * (FindObjectOfType<Player>().transform.position * constant - transform.position).normalized;
     }
 
-    void twentyShoot()
+    void tenShoot()
     {
-        for (float i = 2f; i >= 0f; i -= 0.1f)
+        for (float i = 2f; i >= 0f; i -= 0.2f)
         {
-            Debug.Log(i);
             constant = i;
             Shoot();
         }
     }
+    public Vector3 GenerateRandomPosition(Transform playerTransform, float maxDistance)
+    {
+        // Generate a random position within a sphere around the player
+        Vector3 randomOffset = Random.insideUnitSphere * maxDistance;
 
+        // Add the random offset to the player's position to get a position close to the player
+        Vector3 randomPosition = playerTransform.position + randomOffset;
+
+        return randomPosition;
+    }
     void spawnBaby()
     {
-        GameObject newBaby = Instantiate(BabyPrefab, transform.localPosition, Quaternion.identity);
+        GameObject newBaby = Instantiate(BabyPrefab, GenerateRandomPosition(FindObjectOfType<Player>().transform, 5), Quaternion.identity);
         newBaby.GetComponent<BabyMob>().BulletPrefab = BulletPrefab;
     }
 }

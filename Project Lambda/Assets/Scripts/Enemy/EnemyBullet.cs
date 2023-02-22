@@ -11,6 +11,8 @@ public class EnemyBullet : MonoBehaviour
         int bulletLayer = LayerMask.NameToLayer("Enemy Bullet");
         int ignoreLayer = LayerMask.NameToLayer("Enemy");
         Physics.IgnoreLayerCollision(bulletLayer, ignoreLayer, true);
+        Physics.IgnoreLayerCollision(bulletLayer, bulletLayer, true);
+
     }
     void Update()
     {
