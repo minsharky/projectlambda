@@ -49,7 +49,10 @@ public class BabyMob : MonoBehaviour
         //Boss shoots every 2 seconds
         if (Time.time > timeBullet)
         {
-            Shoot();
+            if (Vector3.Distance(player.position, gameObject.transform.position) < 10)
+            {
+                Shoot();
+            }
             timeBullet += fireRate;
         }
 
