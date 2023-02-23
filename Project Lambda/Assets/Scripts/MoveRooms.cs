@@ -26,7 +26,7 @@ public class MoveRooms : MonoBehaviour
     private void Update()
     {
         //comment this in when we want to guide players to certain routes in the base scene
-        /*if (scene.name == "Base")
+       /* if (scene.name == "Base")
         {
             int which_level = 0;
             if (level != "Boss4Room")
