@@ -26,7 +26,7 @@ public class MoveRooms : MonoBehaviour
     private void Update()
     {
         //comment this in when we want to guide players to certain routes in the base scene
-       /* if (scene.name == "Base")
+        if (scene.name == "Base")
         {
             int which_level = 0;
             if (level != "Boss4Room")
@@ -44,8 +44,8 @@ public class MoveRooms : MonoBehaviour
             }
         }
         else
-        {*/
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             //turn it back on when all the enemies in the room are dead --> green hue
             if (level != "Base")
@@ -72,24 +72,26 @@ public class MoveRooms : MonoBehaviour
                     if (which_boss == 1)
                     {
                         player.Boss_one_complete = true;
-                    }
+                            player.Current_level = 2;
+                        }
                     else if (which_boss == 2)
                     {
                         player.Boss_two_complete = true;
-                    }
+                            player.Current_level = 3;
+                        }
                     else if (which_boss == 3)
                     {
                         player.Boss_three_complete = true;
-                    }
+                            player.Current_level = 4;
+                        }
                     else
                     {
                         player.Boss_four_complete = true;
-                    }
-                    player.Current_level++;
+                     }
                 }
             }
         }
-        // }
+         }
 
 
     }
