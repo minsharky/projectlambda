@@ -20,7 +20,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") ||
+        if (collision.gameObject.CompareTag("Enemy") ||
           collision.gameObject.CompareTag("Wall") ||
           collision.gameObject.CompareTag("Bounce") ||
           collision.gameObject.CompareTag("Tunnel"))
