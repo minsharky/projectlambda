@@ -23,14 +23,13 @@ public class EnemyBullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") ||
+            collision.gameObject.CompareTag("Wall") ||
+            collision.gameObject.CompareTag("Bounce") ||
+            collision.gameObject.CompareTag("Tunnel"))
         {
             Destroy(this.gameObject);
         }
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            Destroy(this.gameObject);
-        }
-        
+
     }
 }

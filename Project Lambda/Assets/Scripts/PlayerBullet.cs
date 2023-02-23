@@ -20,11 +20,10 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(this.gameObject);
-        }
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Player") ||
+          collision.gameObject.CompareTag("Wall") ||
+          collision.gameObject.CompareTag("Bounce") ||
+          collision.gameObject.CompareTag("Tunnel"))
         {
             Destroy(this.gameObject);
         }

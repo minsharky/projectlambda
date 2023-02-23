@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 527580527}
   hitPoints: 100
+  regenRate: 0.008333334
   damageFromContact: 0
   damageFromBullet: 0
 --- !u!114 &-3653355303020897783
