@@ -16,7 +16,7 @@ public class Boss1 : MonoBehaviour
     // Boss Attributes
     public float bossSpeed;
     public float hitPoints;
-    public float expValue = 10;
+    public float expValue = 12;
     // public float DamageFromBullet;
     public float fireRate;
     public float bossP2Speed;
