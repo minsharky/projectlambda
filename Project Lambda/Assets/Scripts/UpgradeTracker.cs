@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,6 +50,8 @@ public class UpgradeTracker : MonoBehaviour
     ExperienceBar expBar;
 
     public AudioSource upgradeSound;
+    public AudioSource experienceSound;
+    public Boolean sound_played;
     
 
     
@@ -75,6 +78,8 @@ public class UpgradeTracker : MonoBehaviour
         cooldownUpgradeBar = GameObject.FindGameObjectWithTag("Cooldown Bar").GetComponent<CooldownUpgradeBar>();
         powerUpgradeBar = GameObject.FindGameObjectWithTag("Power Bar").GetComponent<PowerUpgradeBar>();
         expBar = GameObject.FindGameObjectWithTag("Experience Bar").GetComponent<ExperienceBar>();
+        sound_played = false;
+
     }
 
     // TODO: Check if the player can upgrade every frame (how many upgrade points).
@@ -83,6 +88,17 @@ public class UpgradeTracker : MonoBehaviour
     // TODO LATER: Display the upgrade values on screen, hopefully using something like a bar.
     void Update()
     {
+        if (exp >= expToUpgrade)
+        {
+            if (!sound_played)
+            {
+                experienceSound.Play();
+                sound_played = true;
+            }
+        }
+        else {
+            sound_played = false;
+        }
     }
 
     public void TryToUpgradeSpeed()
@@ -102,6 +118,7 @@ public class UpgradeTracker : MonoBehaviour
             }
             playerMovement.UpdateMoveSpeed();
             speedBar.SpeedBarUpdate();
+            upgradeSound.Play();
         }
     }
 
@@ -121,6 +138,7 @@ public class UpgradeTracker : MonoBehaviour
             }
             player.UpdateHealthUpgrade();
             healthUpgradeBar.HealthUpgradeBarUpdate();
+            upgradeSound.Play();
         }
     }
 
@@ -140,6 +158,7 @@ public class UpgradeTracker : MonoBehaviour
             }
             shooting.UpdateFiringSpeed();
             cooldownUpgradeBar.CooldownUpgradeBarUpdate();
+            upgradeSound.Play();
         }
     }
 
@@ -159,6 +178,7 @@ public class UpgradeTracker : MonoBehaviour
             }
             shooting.UpdateBitPower();
             powerUpgradeBar.PowerUpgradeBarUpdate();
+            upgradeSound.Play();
         }
     }
 

@@ -3,7 +3,15 @@ Audio:
 nanonoise_012.wav by Noise Generator (freesound.org)
 Error 8 Bit.wav by Mrthenoronha (freesound.org)
 Door knocking (Angry).wav by Macif (freesound.org)
-8bit Incoming Enemy by Breviceps (freesound.org)
+8-Bit-Incoming Enemy by Breviceps (freesound.org)
+8 Bit Slam by Jofae (freesound.org)
+Game FX #8 by danlucaz (freesound.org)
+8 Bit Powerup by SomeGuy22 (freesound.org)
+projectile.wav by jeckkech
+8 Bit gunshot.wav by EVRetro
+Kill Enemy 8 Bit.wav by Mrthenoronha
+Computer Breaking Sound by thehorriblejoke
+Destruction 8 Bit by Mrthenoranha
 
 BossRoute3:
 8 Bit Retro Funk by David Renda (Fesliyan Studios)
