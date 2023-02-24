@@ -16,6 +16,7 @@ public class Boss1 : MonoBehaviour
     // Boss Attributes
     public float bossSpeed;
     public float hitPoints;
+    public float maxHitPoints;
     public float expValue;
     // public float DamageFromBullet;
     public float fireRate;
@@ -40,6 +41,7 @@ public class Boss1 : MonoBehaviour
 
         bossSpeed = 1.5f;
         hitPoints = 25;
+        maxHitPoints = 25;
         //  DamageFromBullet = 2f;
         fireRate = 2f;
         bossP2Speed = 2.5f;
@@ -99,5 +101,14 @@ public class Boss1 : MonoBehaviour
         constant = i;
         Shoot();
     }
+    }
+    public float getHitPoints()
+    {
+        return hitPoints;
+    }
+
+    public float getMaxHitPoints()
+    {
+        return maxHitPoints;
     }
 }

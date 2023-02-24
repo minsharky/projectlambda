@@ -15,6 +15,7 @@ TagManager:
   - Player Health Bar
   - Experience Bar
   - Bounce
+  - Boss 1 Health Bar
   layers:
   - Default
   - TransparentFX
