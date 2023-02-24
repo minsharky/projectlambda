@@ -29,6 +29,14 @@ public class Player : MonoBehaviour
 
     // HealthBar
     PlayerHealthBar healthBar;
+
+
+    //Audios
+    public AudioSource wallCrashSound;
+    public AudioSource redDoorSound;
+    public AudioSource greenDoorSound;
+
+
     private int current_level;
     public int Current_level
     {
@@ -120,12 +128,27 @@ public class Player : MonoBehaviour
         {
             hitPoints -= damageFromBullet;
         }
-        if (collision.gameObject.CompareTag("Bounce"))
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            wallCrashSound.Play();
+        }
+
+        if (collision.gameObject.CompareTag("Tunnel") && !collision.gameObject.GetComponent<BoxCollider2D>().isTrigger)
+        {
+            redDoorSound.Play();
+        }
+        else if (collision.gameObject.CompareTag("Tunnel") && collision.gameObject.GetComponent<BoxCollider2D>().isTrigger)
+        {
+            greenDoorSound.Play();
+        }
+
+        /*if (collision.gameObject.CompareTag("Bounce"))
         {
             Vector2 difference = transform.position - collision.gameObject.transform.position;
             //makes it looks like teleports :/
             rigidBody.AddForce(difference*5000f, ForceMode2D.Force);
-        }
+        }*/
         healthBar.UpdatePlayerHealth();
         checkGameOver();
     }
