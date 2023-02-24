@@ -16,7 +16,7 @@ public class BabyMob : MonoBehaviour
     public float babySpeed;
     public float hitPoints;
     // How much is this enemy worth in terms of player experience?
-    public float expValue = 1;
+    public float expValue;
     // public float DamageFromBullet;
     public float fireRate;
     public float babyP2Speed;
@@ -32,6 +32,7 @@ public class BabyMob : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        expValue = 1;
         player = FindObjectOfType<Player>().transform;
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         rigidBody = GetComponent<Rigidbody2D>();
@@ -64,11 +65,11 @@ public class BabyMob : MonoBehaviour
         //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0)
         {
-            // Update Player's exp level
-            upgradeTracker.IncreaseExp(expValue);
+            
             // Enemy should die
             if (!sound_played)
             {
+                upgradeTracker.IncreaseExp(expValue);
                 deathSound.Play();
                 sound_played = true;
             }

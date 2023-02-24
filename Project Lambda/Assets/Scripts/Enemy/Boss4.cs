@@ -83,9 +83,9 @@ public class Boss4 : MonoBehaviour
         //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0)
         {
-            upgradeTracker.IncreaseExp(expValue);
             if (!sound_played)
             {
+                upgradeTracker.IncreaseExp(expValue);
                 deathSound.Play();
                 sound_played = true;
             }
