@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class ExperienceBar : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public float expValue = 0;
-    public float expMax;
+    // public float expMax;
 
     // Slider component
     Slider expBar;
@@ -19,7 +19,7 @@ public class ExperienceBar : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         expBar = GetComponent<Slider>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
-        expBar.minValue = -1;
+        expBar.minValue = -15f / 20;
         expBar.value = expValue;
         expBar.maxValue = upgradeTracker.expToUpgrade;
     }

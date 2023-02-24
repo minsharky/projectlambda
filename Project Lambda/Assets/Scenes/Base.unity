@@ -403,6 +403,10 @@ PrefabInstance:
       propertyPath: BulletPrefab
       value: 
       objectReference: {fileID: 6022802799066404064, guid: 2df2de54b4353d041b1d073b827ecf1c, type: 3}
+    - target: {fileID: 527580526, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+      propertyPath: expToUpgrade
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3513264315559762385, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1164,6 +1168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Boss1Route
   new_pos: {x: -34.3, y: -42.5, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &858056951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1731,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Boss3Route
   new_pos: {x: -45.36222, y: 44.30335, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1001 &1277668194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1955,6 +1965,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Boss4Room
   new_pos: {x: -16.33, y: -0.15, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1484797435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,6 +2133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Boss2Route
   new_pos: {x: -1.29, y: 14, z: 0}
+  col: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &2055000514
 GameObject:
   m_ObjectHideFlags: 0
