@@ -280,6 +280,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &377775660 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7863836126406934433, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+  m_PrefabInstance: {fileID: 2098274485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &377775661 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1085207382345988020, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+  m_PrefabInstance: {fileID: 2098274485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &378693525
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +440,7 @@ GameObject:
   - component: {fileID: 498405879}
   m_Layer: 0
   m_Name: Tunnels
-  m_TagString: Untagged
+  m_TagString: Tunnel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,6 +575,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &577899260 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4368086107263938708, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+  m_PrefabInstance: {fileID: 2098274485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &651455804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1026,6 +1041,7 @@ MonoBehaviour:
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
+  greenDoor: {fileID: 577899260}
 --- !u!1 &858056951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1605,7 @@ MonoBehaviour:
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
+  greenDoor: {fileID: 577899260}
 --- !u!1001 &1277668194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1823,6 +1840,7 @@ MonoBehaviour:
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
+  greenDoor: {fileID: 577899260}
 --- !u!1 &1484797435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +2009,7 @@ MonoBehaviour:
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
+  greenDoor: {fileID: 577899260}
 --- !u!1 &2055000514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,6 +2101,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4448538099652665861, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+      propertyPath: redDoorSound
+      value: 
+      objectReference: {fileID: 377775661}
+    - target: {fileID: -4448538099652665861, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+      propertyPath: greenDoorSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4448538099652665861, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+      propertyPath: wallCrashSound
+      value: 
+      objectReference: {fileID: 377775660}
+    - target: {fileID: -4448538099652665861, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+      propertyPath: enemyContactSound
+      value: 
+      objectReference: {fileID: 2098274486}
     - target: {fileID: 3513264315559762385, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2136,3 +2171,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+--- !u!82 &2098274486 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2022527707072744313, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+  m_PrefabInstance: {fileID: 2098274485}
+  m_PrefabAsset: {fileID: 0}

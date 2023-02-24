@@ -14,6 +14,8 @@ public class MoveRooms : MonoBehaviour
     public Player player;
     Scene scene;
 
+    public AudioSource greenDoor;
+
     private void Start()
     {
         col = GetComponent<BoxCollider2D>();
@@ -73,16 +75,19 @@ public class MoveRooms : MonoBehaviour
                     {
                         player.Boss_one_complete = true;
                             player.Current_level = 2;
+                            player.Sound_played = false;
                         }
                     else if (which_boss == 2)
                     {
                         player.Boss_two_complete = true;
                             player.Current_level = 3;
+                            player.Sound_played = false;
                         }
                     else if (which_boss == 3)
                     {
                         player.Boss_three_complete = true;
                             player.Current_level = 4;
+
                         }
                     else
                     {
@@ -100,6 +105,8 @@ public class MoveRooms : MonoBehaviour
     {
         if (coll.gameObject.name == "Player")
         {
+            greenDoor.time = 0.3f;
+            greenDoor.Play();
             //Here it would use the "level" variable to load the next scene
             SceneManager.LoadScene(level);
             

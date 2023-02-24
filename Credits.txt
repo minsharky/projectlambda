@@ -2,6 +2,8 @@ Audio:
 
 nanonoise_012.wav by Noise Generator (freesound.org)
 Error 8 Bit.wav by Mrthenoronha (freesound.org)
+Door knocking (Angry).wav by Macif (freesound.org)
+8bit Incoming Enemy by Breviceps (freesound.org)
 
 BossRoute3:
 8 Bit Retro Funk by David Renda (Fesliyan Studios)

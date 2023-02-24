@@ -934,6 +934,7 @@ MonoBehaviour:
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
+  greenDoor: {fileID: 743141023}
 --- !u!61 &278302151
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2215,6 +2216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+--- !u!82 &743141023 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4368086107263938708, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+  m_PrefabInstance: {fileID: 743141022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &757121576
 PrefabInstance:
   m_ObjectHideFlags: 0

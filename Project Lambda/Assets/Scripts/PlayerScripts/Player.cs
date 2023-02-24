@@ -34,14 +34,20 @@ public class Player : MonoBehaviour
     //Audios
     public AudioSource wallCrashSound;
     public AudioSource redDoorSound;
-    public AudioSource greenDoorSound;
-
+    public AudioSource enemyClearedSound;
+    public AudioSource enemyContactSound;
 
     private int current_level;
     public int Current_level
     {
         get { return current_level; }
         set { current_level = value; }
+    }
+
+    private Boolean sound_played;
+    public Boolean Sound_played
+    {
+        set { sound_played = value; }
     }
 
     Scene scene;
@@ -84,6 +90,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,11 +107,25 @@ public class Player : MonoBehaviour
         boss_four_complete = false;
         scene = SceneManager.GetActiveScene();
         current_level = 1;
+
+        sound_played = false;
     }
 
     private void Update()
     {
         scene = SceneManager.GetActiveScene();
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0) {
+            if ((!Boss_one_complete && scene.name == "Boss1Route") ||
+            (!Boss_two_complete && scene.name == "Boss2Route") ||
+            (!Boss_three_complete && scene.name == "Boss3Route"))
+            {
+                if (!sound_played) {
+                    enemyClearedSound.Play();
+                }
+                sound_played = true;
+            }
+        }else 
+
         if ((Boss_one_complete && (scene.name == "Boss1Route" || scene.name == "Boss1Room")) ||
             (Boss_two_complete && (scene.name == "Boss2Route" || scene.name == "Boss2Room")) ||
             (Boss_three_complete && (scene.name == "Boss3Route" || scene.name == "Boss3Room")) ||
@@ -123,6 +144,7 @@ public class Player : MonoBehaviour
         {
             hitPoints -= damageFromContact;
             rigidBody.AddForce(collision.gameObject.transform.right * 100);
+            enemyContactSound.Play();
         }
         if (collision.gameObject.GetComponent<EnemyBullet>())
         {
@@ -137,10 +159,6 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Tunnel") && !collision.gameObject.GetComponent<BoxCollider2D>().isTrigger)
         {
             redDoorSound.Play();
-        }
-        else if (collision.gameObject.CompareTag("Tunnel") && collision.gameObject.GetComponent<BoxCollider2D>().isTrigger)
-        {
-            greenDoorSound.Play();
         }
 
         /*if (collision.gameObject.CompareTag("Bounce"))

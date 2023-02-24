@@ -1699,6 +1699,7 @@ MonoBehaviour:
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
+  greenDoor: {fileID: 1575692969}
 --- !u!212 &645963729
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3688,7 +3689,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369654505
 GameObject:
@@ -3948,6 +3949,7 @@ MonoBehaviour:
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
+  greenDoor: {fileID: 1575692969}
 --- !u!61 &1404909102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4623,6 +4625,7 @@ MonoBehaviour:
   col: {fileID: 0}
   m_SpriteRenderer: {fileID: 0}
   player: {fileID: 0}
+  greenDoor: {fileID: 0}
 --- !u!212 &1530624512
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4953,6 +4956,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+--- !u!82 &1575692969 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4368086107263938708, guid: e08e551de19345f459a7a54a234c53a1, type: 3}
+  m_PrefabInstance: {fileID: 1575692968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1583533864
 GameObject:
   m_ObjectHideFlags: 0
