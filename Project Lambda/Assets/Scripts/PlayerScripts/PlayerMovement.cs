@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateMoveSpeed()
     {
-        moveSpeed = baseVal + (4 * upgrades.uPlayerSpeed);
+        moveSpeed = baseVal + (1.5f * upgrades.uPlayerSpeed);
     }
 }
 
