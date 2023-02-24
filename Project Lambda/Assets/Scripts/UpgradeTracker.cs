@@ -11,7 +11,7 @@ public class UpgradeTracker : MonoBehaviour
 
     /// Experience tracker (Foundation of Upgrade Economy)
     public float exp = 0;
-    public float expToUpgrade = 20;
+    public float expToUpgrade = 15;
 
     /// <summary>
     /// Fields that store the potency of each upgrade
