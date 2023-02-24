@@ -17,7 +17,7 @@ public class Boss3 : MonoBehaviour
     public float bossSpeed;
     public float hitPoints;
     public float maxHitPoints = 100;
-    public float expValue = 10;
+    public float expValue = 12;
     // public float DamageFromBullet;
     public float fireRate;
     public float bossP2Speed;
