@@ -15,8 +15,8 @@ public class Boss1HB : MonoBehaviour
     void Start()
     {
         healthBar = GetComponent<Slider>();
-        boss = GameObject.FindObjectOfType<Boss1>().GetComponent<Boss1>();
-        healthBar.minValue = -5f;
+        boss = FindObjectOfType<Boss1>().GetComponent<Boss1>();
+        //healthBar.minValue = 0f;
     }
 
     // Update Player Health
@@ -25,12 +25,16 @@ public class Boss1HB : MonoBehaviour
     public void UpdatePlayerHealth()
     {
         healthBar.maxValue = boss.getMaxHitPoints();
-        healthBar.minValue = -healthBar.maxValue / 20;
+        //healthBar.minValue = -healthBar.maxValue / 20;
         healthBar.value = boss.getHitPoints();
     }
 
     private void Update()   
     {
+        if (boss == null)
+        {
+            Destroy(healthBar);
+        }
         UpdatePlayerHealth();
         //transform.position = boss.transform.position;
         //transform.SetAsLastSibling();
