@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System;
 
 public class Boss2 : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Boss2 : MonoBehaviour
     
     public float timeBullet;
     public float constant;
+
+    public Boolean sound_played;
+
+    public AudioSource gotHitSound;
+    public AudioSource deathSound;
 
     EnemyHealthBar healthBar;
     // Start is called before the first frame update
@@ -49,6 +55,8 @@ public class Boss2 : MonoBehaviour
 
         // Health Bar
         healthBar = GetComponent<EnemyHealthBar>();
+
+        sound_played = false;
     }
 
     // Update is called once per frame
@@ -78,7 +86,13 @@ public class Boss2 : MonoBehaviour
         //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0) {
             upgradeTracker.IncreaseExp(expValue);
-            Destroy(this.gameObject);
+            if (!sound_played)
+            {
+                deathSound.Play();
+                sound_played = true;
+            }
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(this.gameObject, 1f);
         }
 
         //healthBar.UpdateEnemyHealth(hitPoints / maxHitPoints);
@@ -88,6 +102,7 @@ public class Boss2 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerBullet>()) {
             hitPoints -= playerShooting.actualBulletPower;
+            gotHitSound.Play();
             if (hitPoints <= 25)
             {
                 bossSpeed = 5.0f;

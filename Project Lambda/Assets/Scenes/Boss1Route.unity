@@ -1867,7 +1867,7 @@ GameObject:
   - component: {fileID: 502901558}
   m_Layer: 1
   m_Name: tunnel
-  m_TagString: Untagged
+  m_TagString: Tunnel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4046,7 +4046,7 @@ GameObject:
   - component: {fileID: 924751170}
   m_Layer: 1
   m_Name: Boss1EnterTunnel
-  m_TagString: Untagged
+  m_TagString: Tunnel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

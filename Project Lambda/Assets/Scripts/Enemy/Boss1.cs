@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System;
 
 public class Boss1 : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class Boss1 : MonoBehaviour
     // Get the AIPath Component
     public AIPath path;
 
+    public Boolean sound_played;
+
+    public AudioSource gotHitSound;
+    public AudioSource deathSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +55,8 @@ public class Boss1 : MonoBehaviour
         //Boss starts firing bullets after 3 seconds
         timeBullet = Time.time + 3f;
         constant = 1;
+
+        sound_played = false;
     }
 
     // Update is called once per frame
@@ -76,7 +84,13 @@ public class Boss1 : MonoBehaviour
         //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0) {
             upgradeTracker.IncreaseExp(expValue);
-            Destroy(this.gameObject);
+            if (!sound_played)
+            {
+                deathSound.Play();
+                sound_played = true;
+            }
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(this.gameObject, 1f);
         }
     }
 
@@ -84,6 +98,7 @@ public class Boss1 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerBullet>()) {
             hitPoints -= playerShooting.actualBulletPower;
+            gotHitSound.Play();
         }
     }
 

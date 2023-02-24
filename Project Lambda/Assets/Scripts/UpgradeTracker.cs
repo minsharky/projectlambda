@@ -47,6 +47,8 @@ public class UpgradeTracker : MonoBehaviour
 
     // Experience Bar
     ExperienceBar expBar;
+
+    public AudioSource upgradeSound;
     
 
     

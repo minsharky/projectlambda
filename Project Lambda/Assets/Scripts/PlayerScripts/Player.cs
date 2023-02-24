@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     public AudioSource redDoorSound;
     public AudioSource enemyClearedSound;
     public AudioSource enemyContactSound;
+    public AudioSource enemyBulletSound;
 
     private int current_level;
     public int Current_level
@@ -121,8 +122,8 @@ public class Player : MonoBehaviour
             {
                 if (!sound_played) {
                     enemyClearedSound.Play();
+                    sound_played = true;
                 }
-                sound_played = true;
             }
         }else 
 
@@ -149,6 +150,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.GetComponent<EnemyBullet>())
         {
             hitPoints -= damageFromBullet;
+            enemyBulletSound.Play();
         }
 
         if (collision.gameObject.CompareTag("Wall"))
