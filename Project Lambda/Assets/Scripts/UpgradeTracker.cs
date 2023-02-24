@@ -10,8 +10,8 @@ public class UpgradeTracker : MonoBehaviour
     /// </summary>
 
     /// Experience tracker (Foundation of Upgrade Economy)
-    public float exp = 0;
-    public float expToUpgrade = 15;
+    public float exp;
+    public float expToUpgrade; 
 
     /// <summary>
     /// Fields that store the potency of each upgrade
@@ -53,6 +53,9 @@ public class UpgradeTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        exp = 0;
+        expToUpgrade = 15;
+
         uBitPower = 0;
         uFiringSpeed = 0;
         uHealth = 0;

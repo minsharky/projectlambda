@@ -16,7 +16,7 @@ public class Boss1 : MonoBehaviour
     // Boss Attributes
     public float bossSpeed;
     public float hitPoints;
-    public float expValue = 12;
+    public float expValue;
     // public float DamageFromBullet;
     public float fireRate;
     public float bossP2Speed;
@@ -30,6 +30,8 @@ public class Boss1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        expValue = 12;
+
         player = FindObjectOfType<Player>().transform;
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
