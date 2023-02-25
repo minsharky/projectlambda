@@ -7,12 +7,26 @@ public class PowerUpgradeButton : MonoBehaviour
 {
     public Button button;
     public UpgradeTracker upgradeTracker;
+    public Image img;
     // Start is called before the first frame update
     void Start()
     {
         button = GetComponent<Button>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
         button.onClick.AddListener(TaskOnClick);
+        img = GetComponent<Image>();
+    }
+
+    void Update()
+    {
+        if (upgradeTracker.exp >= upgradeTracker.expToUpgrade)
+        {
+            img.enabled = true;
+        }
+        else
+        {
+            img.enabled = false;
+        }
     }
 
     // Update is called once per frame
