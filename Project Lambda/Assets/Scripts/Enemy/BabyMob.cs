@@ -58,7 +58,11 @@ public class BabyMob : MonoBehaviour
         //Boss shoots every 2 seconds
         if (Time.time > timeBullet)
         {
-            Shoot();
+            if (! sound_played)
+            {
+                Shoot(); 
+            }
+            
             timeBullet += fireRate;
         }
 
