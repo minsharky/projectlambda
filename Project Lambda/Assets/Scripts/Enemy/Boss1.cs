@@ -26,6 +26,11 @@ public class Boss1 : MonoBehaviour
     public float timeBullet;
     public float constant;
 
+    SpriteRenderer spriteRenderer;
+    Color originalColor;
+    Color redColor;
+    float redDuration;
+
     // Get the AIPath Component
     public AIPath path;
 
@@ -37,13 +42,18 @@ public class Boss1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        expValue = 12;
+        expValue = 15;
 
         player = FindObjectOfType<Player>().transform;
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
         rigidBody = GetComponent<Rigidbody2D>();
         path = GetComponent<AIPath>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+        redColor = new Color(1f, 0f, 0f, 1f);
+        redDuration = 0.1f;
 
         bossSpeed = 1.5f;
         hitPoints = 25;
@@ -99,7 +109,16 @@ public class Boss1 : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerBullet>()) {
             hitPoints -= playerShooting.actualBulletPower;
             gotHitSound.Play();
+            spriteRenderer.color = redColor;
+            StartCoroutine(returnWhite());
         }
+    }
+
+    //Hit indicator coroutine
+    IEnumerator returnWhite()
+    {
+        yield return new WaitForSeconds(redDuration);
+        spriteRenderer.color = originalColor;
     }
 
     //shoots a bullet in the direction of the player

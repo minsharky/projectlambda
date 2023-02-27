@@ -25,6 +25,11 @@ public class Boss2 : MonoBehaviour
     public float timeBullet;
     public float constant;
 
+    SpriteRenderer spriteRenderer;
+    Color originalColor;
+    Color redColor;
+    float redDuration;
+
     public Boolean sound_played;
 
     public AudioSource gotHitSound;
@@ -34,7 +39,7 @@ public class Boss2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        expValue = 12;
+        expValue = 15;
 
         player = FindObjectOfType<Player>().transform;
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
@@ -48,6 +53,11 @@ public class Boss2 : MonoBehaviour
         // DamageFromBullet = 2f;
         fireRate = 2f;
         bossP2Speed = 2.5f;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+        redColor = new Color(1f, 0f, 0f, 1f);
+        redDuration = 0.1f;
 
         // Boss starts firing bullets after 3 seconds
         timeBullet = Time.time + 3f;
@@ -99,7 +109,16 @@ public class Boss2 : MonoBehaviour
                 bossSpeed = 5.0f;
                 fiveShoot();
             }
+            spriteRenderer.color = redColor;
+            StartCoroutine(returnWhite());
         }
+    }
+
+    //Hit indicator coroutine
+    IEnumerator returnWhite()
+    {
+        yield return new WaitForSeconds(redDuration);
+        spriteRenderer.color = originalColor;
     }
 
     //shoots a bullet in the direction of the player
@@ -113,7 +132,6 @@ public class Boss2 : MonoBehaviour
     {
         for (float i = 1.4f; i >= 0.6f; i -= 0.2f)
         {
-            Debug.Log(i);
             constant = i;
             Shoot();
         }

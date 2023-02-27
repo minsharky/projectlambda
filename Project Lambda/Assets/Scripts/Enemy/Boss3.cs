@@ -17,7 +17,7 @@ public class Boss3 : MonoBehaviour
     // Boss Attributes
     public float bossSpeed;
     public float hitPoints;
-    public float maxHitPoints = 50;
+    public float maxHitPoints;
     public float expValue;
     // public float DamageFromBullet;
     public float fireRate;
@@ -26,6 +26,11 @@ public class Boss3 : MonoBehaviour
     public float timeBullet;
     public float timeVolley;
     public float constant;
+
+    SpriteRenderer spriteRenderer;
+    Color originalColor;
+    Color redColor;
+    float redDuration;
 
     // Get the AIPath Component
     public AIPath path;
@@ -38,7 +43,7 @@ public class Boss3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        expValue = 12;
+        expValue = 15;
 
         player = FindObjectOfType<Player>().transform;
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
@@ -48,6 +53,7 @@ public class Boss3 : MonoBehaviour
 
         bossSpeed = 1.5f;
         hitPoints = 50f;
+        maxHitPoints = 50f;
         //  DamageFromBullet = 2f;
         fireRate = 3f;
         bossP2Speed = 5f;
@@ -55,6 +61,11 @@ public class Boss3 : MonoBehaviour
         //Boss starts firing bullets after 3 seconds
         timeBullet = Time.time + 3f;
         constant = 1;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+        redColor = new Color(1f, 0f, 0f, 1f);
+        redDuration = 0.1f;
 
         sound_played = false;
     }
@@ -100,7 +111,16 @@ public class Boss3 : MonoBehaviour
                 tenShoot();
             }
             gotHitSound.Play();
+            spriteRenderer.color = redColor;
+            StartCoroutine(returnWhite());
         }
+    }
+
+    //Hit indicator coroutine
+    IEnumerator returnWhite()
+    {
+        yield return new WaitForSeconds(redDuration);
+        spriteRenderer.color = originalColor;
     }
 
     //shoots a bullet in the direction of the player
@@ -115,7 +135,6 @@ public class Boss3 : MonoBehaviour
     {
         for (float i = 1.2f; i >= 0.8f; i -= 0.1f)
         {
-            Debug.Log(i);
             constant = i;
             Shoot();
         }

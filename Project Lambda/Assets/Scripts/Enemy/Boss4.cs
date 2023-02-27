@@ -29,6 +29,11 @@ public class Boss4 : MonoBehaviour
     public float timeVolley;
     public float constant;
 
+    SpriteRenderer spriteRenderer;
+    Color originalColor;
+    Color redColor;
+    float redDuration;
+
     // Get the AIPath Component
     public AIPath path;
 
@@ -58,6 +63,11 @@ public class Boss4 : MonoBehaviour
         //Boss starts firing bullets after 3 seconds
         timeBullet = Time.time + 3f;
         constant = 1;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+        redColor = new Color(1f, 0f, 0f, 1f);
+        redDuration = 0.1f;
     }
 
     // Update is called once per frame
@@ -110,7 +120,16 @@ public class Boss4 : MonoBehaviour
                 spawnBaby();
                 babyCounter = 4;
             }
+            spriteRenderer.color = redColor;
+            StartCoroutine(returnWhite());
         }
+    }
+
+    //Hit indicator coroutine
+    IEnumerator returnWhite()
+    {
+        yield return new WaitForSeconds(redDuration);
+        spriteRenderer.color = originalColor;
     }
 
     //shoots a bullet in the direction of the player
@@ -124,7 +143,6 @@ public class Boss4 : MonoBehaviour
     {
         for (float i = 1.2f; i >= 0.8f; i -= 0.1f)
         {
-            Debug.Log(i);
             constant = i;
             Shoot();
         }

@@ -11,6 +11,7 @@ public class BabyMob : MonoBehaviour
     public UpgradeTracker upgradeTracker;
     public Rigidbody2D rigidBody;
     public GameObject BulletPrefab;
+    SpriteRenderer spriteRenderer;
 
     //Boss Attributes
     public float babySpeed;
@@ -20,6 +21,10 @@ public class BabyMob : MonoBehaviour
     // public float DamageFromBullet;
     public float fireRate;
     public float babyP2Speed;
+
+    Color originalColor;
+    Color redColor;
+    float redDuration;
 
     public float timeBullet;
     public float constant;
@@ -37,6 +42,10 @@ public class BabyMob : MonoBehaviour
         playerShooting = FindObjectOfType<Player>().GetComponent<Shooting>();
         rigidBody = GetComponent<Rigidbody2D>();
         upgradeTracker = FindObjectOfType<Player>().GetComponent<UpgradeTracker>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+        redColor = new Color(1f, 0f, 0f, 1f);
+        redDuration = 0.1f;
 
         babySpeed = 1.5f;
         hitPoints = 2;
@@ -89,7 +98,16 @@ public class BabyMob : MonoBehaviour
         {
             hitPoints -= playerShooting.actualBulletPower;
             gotHitSound.Play();
+            spriteRenderer.color = redColor;
+            StartCoroutine(returnWhite());
         }
+    }
+
+    //Hit indicator coroutine
+    IEnumerator returnWhite()
+    {
+        yield return new WaitForSeconds(redDuration);
+        spriteRenderer.color = originalColor;
     }
 
     //shoots a bullet in the direction of the player

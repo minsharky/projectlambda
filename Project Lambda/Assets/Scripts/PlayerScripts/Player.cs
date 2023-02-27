@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        damageFromContact = 5f;
+        damageFromContact = 1f;
         damageFromBullet = 2f;
         // Components
         upgrades = GetComponent<UpgradeTracker>();

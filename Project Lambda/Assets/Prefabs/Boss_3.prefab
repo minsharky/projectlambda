@@ -240,7 +240,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 6022802799066404064, guid: a4e4f3747c9450f4c8c6263db3a4e2a4, type: 3}
   bossSpeed: 0
   hitPoints: 0
-  maxHitPoints: 100
+  maxHitPoints: 0
   expValue: 10
   fireRate: 0
   bossP2Speed: 0
