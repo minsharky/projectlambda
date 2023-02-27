@@ -18,7 +18,11 @@ public class Boss4 : MonoBehaviour
 
     // Boss Attributes
     public float bossSpeed;
-    public float hitPoints;
+    private float hitPoints;// How much is this enemy worth in terms of player experience?
+    public float Hit_Points
+    {
+        get { return hitPoints; }
+    }
     public float maxHitPoints = 100;
     public float expValue;
     // public float DamageFromBullet;
@@ -40,7 +44,6 @@ public class Boss4 : MonoBehaviour
     public Boolean sound_played;
 
     public AudioSource gotHitSound;
-    public AudioSource deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -94,14 +97,8 @@ public class Boss4 : MonoBehaviour
         //When Boss's HP gets to zero, it dies
         if (hitPoints <= 0)
         {
-            if (!sound_played)
-            {
-                upgradeTracker.IncreaseExp(expValue);
-                deathSound.Play();
-                sound_played = true;
-            }
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(this.gameObject, 0.3f);
+            upgradeTracker.IncreaseExp(expValue);
+            Destroy(this.gameObject);
         }
     }
 

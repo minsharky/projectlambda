@@ -24,6 +24,7 @@ public class MoveRooms : MonoBehaviour
         m_SpriteRenderer.color = Color.red;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         scene = SceneManager.GetActiveScene();
+        greenDoor = player.GetComponent<AudioSource>();
     }
     private void Update()
     {

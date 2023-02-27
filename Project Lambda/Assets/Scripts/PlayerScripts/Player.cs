@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
     public AudioSource enemyContactSound;
     public AudioSource enemyBulletSound;
 
+    public AudioSource babyDeath;
+    public AudioSource bossDeath;
+
     private int current_level;
     public int Current_level
     {
@@ -115,17 +118,20 @@ public class Player : MonoBehaviour
     private void Update()
     {
         scene = SceneManager.GetActiveScene();
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0) {
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
             if ((!Boss_one_complete && scene.name == "Boss1Route") ||
             (!Boss_two_complete && scene.name == "Boss2Route") ||
             (!Boss_three_complete && scene.name == "Boss3Route"))
             {
-                if (!sound_played) {
+                if (!sound_played)
+                {
                     enemyClearedSound.Play();
                     sound_played = true;
                 }
             }
-        }else 
+        }
+        else
 
         if ((Boss_one_complete && (scene.name == "Boss1Route" || scene.name == "Boss1Room")) ||
             (Boss_two_complete && (scene.name == "Boss2Route" || scene.name == "Boss2Room")) ||
@@ -137,6 +143,34 @@ public class Player : MonoBehaviour
                 Destroy(enemy);
             }
         }
+
+        else if (GameObject.FindGameObjectsWithTag("Enemy").Length != 0)
+        {
+            foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                if (enemy.GetComponent<BabyMob>() != null && enemy.GetComponent<BabyMob>().Hit_Points <= 0) {
+                    babyDeath.Play();
+                }
+                if (enemy.GetComponent<Boss1>() != null && enemy.GetComponent<Boss1>().Hit_Points <= 0)
+                {
+                    bossDeath.Play();
+                }
+                if (enemy.GetComponent<Boss2>() != null && enemy.GetComponent<Boss2>().Hit_Points <= 0)
+                {
+                    bossDeath.Play();
+                }
+                if (enemy.GetComponent<Boss3>() != null && enemy.GetComponent<Boss3>().Hit_Points <= 0)
+                {
+                    bossDeath.Play();
+                }
+                if (enemy.GetComponent<Boss4>() != null && enemy.GetComponent<Boss4>().Hit_Points <= 0)
+                {
+                    bossDeath.Play();
+                }
+
+            }
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

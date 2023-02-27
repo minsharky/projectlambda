@@ -15,7 +15,11 @@ public class BabyMob : MonoBehaviour
 
     //Boss Attributes
     public float babySpeed;
-    public float hitPoints;
+    private float hitPoints;// How much is this enemy worth in terms of player experience?
+    public float Hit_Points
+    {
+        get { return hitPoints; }
+    }
     // How much is this enemy worth in terms of player experience?
     public float expValue;
     // public float DamageFromBullet;
@@ -80,14 +84,8 @@ public class BabyMob : MonoBehaviour
         {
             
             // Enemy should die
-            if (!sound_played)
-            {
-                upgradeTracker.IncreaseExp(expValue);
-                deathSound.Play();
-                sound_played = true;
-            }
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(this.gameObject, 0.3f);
+            upgradeTracker.IncreaseExp(expValue);
+            Destroy(this.gameObject);
         }
     }
 
