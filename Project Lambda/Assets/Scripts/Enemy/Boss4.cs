@@ -49,9 +49,10 @@ public class Boss4 : MonoBehaviour
         path = GetComponent<AIPath>();
 
         bossSpeed = 1.5f;
-        hitPoints = 100;
+        hitPoints = 50f;
+        maxHitPoints = 50f;
         //  DamageFromBullet = 2f;
-        fireRate = 3f;
+        fireRate = 1f;
         bossP2Speed = 5f;
 
         //Boss starts firing bullets after 3 seconds
@@ -67,7 +68,7 @@ public class Boss4 : MonoBehaviour
         //Boss shoots every 2 seconds
         if (Time.time > timeBullet)
         {
-            tenShoot();
+            fiveShoot();
             // bossSpeed = bossP2Speed;
             // Recall that speed is controlled by the AIPath component
             path.maxSpeed = bossSpeed;
@@ -101,7 +102,7 @@ public class Boss4 : MonoBehaviour
         {
             hitPoints -= playerShooting.actualBulletPower;
             gotHitSound.Play();
-            tenShoot();
+            twentyShoot();
             babyCounter -= 1;
             if (babyCounter == 0)
             {
@@ -119,10 +120,19 @@ public class Boss4 : MonoBehaviour
         Rigidbody2D bulletRigidBody = newBullet.GetComponent<Rigidbody2D>();
         bulletRigidBody.velocity = 10f * (FindObjectOfType<Player>().transform.position * constant - transform.position).normalized;
     }
-
-    void tenShoot()
+    void fiveShoot()
     {
-        for (float i = 2f; i >= 0f; i -= 0.2f)
+        for (float i = 1.2f; i >= 0.8f; i -= 0.1f)
+        {
+            Debug.Log(i);
+            constant = i;
+            Shoot();
+        }
+    }
+
+    void twentyShoot()
+    {
+        for (float i = 2f; i >= 0f; i -= 0.1f)
         {
             constant = i;
             Shoot();
@@ -142,5 +152,14 @@ public class Boss4 : MonoBehaviour
     {
         GameObject newBaby = Instantiate(BabyPrefab, GenerateRandomPosition(FindObjectOfType<Player>().transform, 5), Quaternion.identity);
         newBaby.GetComponent<BabyMob>().BulletPrefab = BulletPrefab;
+    }
+    public float getHitPoints()
+    {
+        return hitPoints;
+    }
+
+    public float getMaxHitPoints()
+    {
+        return maxHitPoints;
     }
 }

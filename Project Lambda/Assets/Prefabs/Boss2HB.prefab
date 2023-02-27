@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 169313543042126528}
   - component: {fileID: 1286591749764819493}
   m_Layer: 5
-  m_Name: Boss1HB Image
+  m_Name: Boss2HB Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,9 +86,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3772387200972503743}
   - component: {fileID: 1218497474834405927}
-  - component: {fileID: 8620016561610176800}
+  - component: {fileID: -3680937754555293733}
   m_Layer: 9
-  m_Name: Boss1HB
+  m_Name: Boss2HB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8620016561610176800
+--- !u!114 &-3680937754555293733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,6 +175,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1669889305185220846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e53ce757b86d524b9fadf8d034a2375, type: 3}
+  m_Script: {fileID: 11500000, guid: fe62c68c43de0734499dc52526ae4173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

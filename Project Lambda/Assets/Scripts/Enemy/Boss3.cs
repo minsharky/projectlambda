@@ -17,7 +17,7 @@ public class Boss3 : MonoBehaviour
     // Boss Attributes
     public float bossSpeed;
     public float hitPoints;
-    public float maxHitPoints = 100;
+    public float maxHitPoints = 50;
     public float expValue;
     // public float DamageFromBullet;
     public float fireRate;
@@ -47,7 +47,7 @@ public class Boss3 : MonoBehaviour
         path = GetComponent<AIPath>();
 
         bossSpeed = 1.5f;
-        hitPoints = 100;
+        hitPoints = 50f;
         //  DamageFromBullet = 2f;
         fireRate = 3f;
         bossP2Speed = 5f;
@@ -95,7 +95,10 @@ public class Boss3 : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerBullet>())
         {
             hitPoints -= playerShooting.actualBulletPower;
-            twentyShoot();
+            if (hitPoints <= 50)
+            {
+                tenShoot();
+            }
             gotHitSound.Play();
         }
     }
@@ -117,13 +120,21 @@ public class Boss3 : MonoBehaviour
             Shoot();
         }
     }
-    void twentyShoot()
+    void tenShoot()
     {
-        for (float i = 2f; i >= 0f; i -= 0.1f)
+        for (float i = 2f; i >= 0f; i -= 0.2f)
         {
-            Debug.Log(i);
             constant = i;
             Shoot();
         }
+    }
+    public float getHitPoints()
+    {
+        return hitPoints;
+    }
+
+    public float getMaxHitPoints()
+    {
+        return maxHitPoints;
     }
 }

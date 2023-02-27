@@ -67,16 +67,7 @@ public class Boss2 : MonoBehaviour
         //Boss shoots 5 bullet spray every 2 seconds
         if (Time.time > timeBullet)
         {
-            Shoot();
-            constant = 1.2f;
-            Shoot();
-            constant = 1.1f;
-            Shoot();
-            constant = 0.9f;
-            Shoot();
-            constant = 0.8f;
-            Shoot();
-            // bossSpeed = bossP2Speed;
+            fiveShoot();
             // Recall that speed is controlled by the AIPath component
             path.maxSpeed = bossP2Speed;
 
@@ -120,7 +111,7 @@ public class Boss2 : MonoBehaviour
     }
     void fiveShoot()
     {
-        for (float i = 1.2f; i >= 0.8f; i -= 0.1f)
+        for (float i = 1.4f; i >= 0.6f; i -= 0.2f)
         {
             Debug.Log(i);
             constant = i;
