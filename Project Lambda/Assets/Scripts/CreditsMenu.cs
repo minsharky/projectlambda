@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CreditsMenu : MonoBehaviour
 {
     UpgradeTracker upgradeTracker;
+    
     private void Start()
     {
         upgradeTracker = GetComponent<UpgradeTracker>();
