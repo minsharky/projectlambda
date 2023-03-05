@@ -13,14 +13,33 @@ Kill Enemy 8 Bit.wav by Mrthenoronha
 Computer Breaking Sound by thehorriblejoke
 Destruction 8 Bit by Mrthenoranha
 
+Base:
+7.mp3 by Eggy Toast (freemusicarchive.org)
+
+BossRoute1:
+Mug by Eggy Toast (freemusicarchive.org)
+
+BossRoom1:
+Rockabooly by Defrinni (freemusicarchive.org)
+
+BossRoute2:
+Catastrophic Success by Eggy Toast(freemusicarchive.org)
+
+BossRoom2:
+I'll Rip Every Tooth Out of That Shark and Make Them Into the Most Beautiful Necklace You Ever Seen by GigaKoops (freemusicarchive.org)
+
+
 BossRoute3:
-8 Bit Retro Funk by David Renda (Fesliyan Studios)
+Death Valley by Eggy Toast (freemusicarchive.org)
 
 BossRoom3:
 Boss Time by David Renda (Fesliyan Studios)
 
 8 Bit Menu by David Renda (Fesliyan Studios)
 8 Bit Surf by David Renda (Fesliyan Studios)
+
+BossRoom4:
+Dodging Lasers by Steve Oxen (Fesliyan Studios)
 
 
 Images:
