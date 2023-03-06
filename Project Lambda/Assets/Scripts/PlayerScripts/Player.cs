@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
     // HealthBar
     PlayerHealthBar healthBar;
 
+    Shooting shooting;
+    PlayerMovement playerMovement;
+
 
     //Audios
     public AudioSource wallCrashSound;
@@ -104,6 +107,8 @@ public class Player : MonoBehaviour
         // Components
         upgrades = GetComponent<UpgradeTracker>();
         healthBar = GameObject.FindGameObjectWithTag("Player Health Bar").GetComponent<PlayerHealthBar>();
+        shooting = GetComponent<Shooting>();
+        playerMovement= GetComponent<PlayerMovement>();
 
         boss_one_complete = false;
         boss_two_complete = false;
@@ -257,9 +262,14 @@ public class Player : MonoBehaviour
         upgrades.uArmor = 0;
         upgrades.uRegenSpeed = 0;
         upgrades.uPlayerSpeed = 0;
+        UpdateHealthUpgrade();
+        playerMovement.UpdateMoveSpeed();
+        shooting.UpdateFiringSpeed();
+        shooting.UpdateBitPower();
         boss_one_complete = false;
         boss_two_complete = false;
         boss_three_complete = false;
         boss_four_complete = false;
+        current_level = 1;
     }
 }
