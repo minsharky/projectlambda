@@ -168,6 +168,7 @@ public class Player : MonoBehaviour
                     bossDeath.Play();
                     ResetGame();
                     SceneManager.LoadScene("Credits Menu");
+                    DontDestroyOnLoad(gameObject);
                 }
 
             }
@@ -242,6 +243,7 @@ public class Player : MonoBehaviour
         {
             ResetGame();
             SceneManager.LoadScene("Death Menu");
+            DontDestroyOnLoad(gameObject);
             //Time.timeScale = 0;
         }
     }
