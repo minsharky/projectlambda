@@ -166,6 +166,8 @@ public class Player : MonoBehaviour
                 if (enemy.GetComponent<Boss4>() != null && enemy.GetComponent<Boss4>().Hit_Points <= 0)
                 {
                     bossDeath.Play();
+                    ResetGame();
+                    SceneManager.LoadScene("Credits Menu");
                 }
 
             }
@@ -238,8 +240,24 @@ public class Player : MonoBehaviour
     {
         if (hitPoints <= 0)
         {
-
-            Time.timeScale = 0;
+            ResetGame();
+            SceneManager.LoadScene("Death Menu");
+            //Time.timeScale = 0;
         }
+    }
+    
+    private void ResetGame()
+    {
+        upgrades.exp = 0;
+        upgrades.uBitPower = 0;
+        upgrades.uFiringSpeed = 0;
+        upgrades.uHealth = 0;
+        upgrades.uArmor = 0;
+        upgrades.uRegenSpeed = 0;
+        upgrades.uPlayerSpeed = 0;
+        boss_one_complete = false;
+        boss_two_complete = false;
+        boss_three_complete = false;
+        boss_four_complete = false;
     }
 }

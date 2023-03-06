@@ -9,6 +9,10 @@ public class PlayerBullet : MonoBehaviour
     void Start()
     {
         time = Time.time;
+        int bulletLayer = LayerMask.NameToLayer("Player Bullet");
+        int ignoreLayer = LayerMask.NameToLayer("Player");
+        Physics.IgnoreLayerCollision(bulletLayer, ignoreLayer, true);
+        Physics.IgnoreLayerCollision(bulletLayer, bulletLayer, true);
     }
     void Update()
     {

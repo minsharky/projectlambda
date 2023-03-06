@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using System;
+using UnityEditor.SearchService;
 
 public class Boss4 : MonoBehaviour
 {

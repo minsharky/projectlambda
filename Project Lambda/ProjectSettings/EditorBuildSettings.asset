@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Boss4Room.unity
     guid: c878a367e0d0df14991e4871cdd6d332
+  - enabled: 1
+    path: Assets/Scenes/Credits Menu.unity
+    guid: b54ed541ed20fd94faffae47550a101e
+  - enabled: 1
+    path: Assets/Scenes/Death Menu.unity
+    guid: a1c4a4d6760a3484ea0b81d1f0271736
   m_configObjects: {}
